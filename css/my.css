@@ -1,1 +1,9 @@
 /* Here is your custom css styles. */
+.code-area {
+    background-color: #000 !important;
+}
+
+pre code {
+    background-color: #000 !important;
+    white-space: pre-wrap;
+}

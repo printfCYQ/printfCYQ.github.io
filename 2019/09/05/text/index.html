@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="test, gongchenghui,github">
     <meta name="description" content="真不错">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,13 +29,13 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -99,7 +99,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fa fa-user-circle-o" style="zoom: 0.6;"></i>
+      <i class="fa fa-user" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -180,7 +180,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fa fa-user-circle-o"></i>
+			    <i class="fa-fw fa fa-user"></i>
 			
 			关于
 		</a>
@@ -434,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -458,10 +458,15 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+                <p>Welcome to [Hexo]</p>
 <h1 id="P01-Markdown-简介"><a href="#P01-Markdown-简介" class="headerlink" title="P01 Markdown 简介"></a>P01 Markdown 简介</h1><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
 <p>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。</p>
 <p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
@@ -472,13 +477,23 @@
 <blockquote>
 <p>1.使用 = 和 - 标记一级和二级标题</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我展示的是一级标题</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">我展示的是二级标题</span><br><span class="line">-----------------</span><br></pre></td></tr></table></figure>
+<pre><code>我展示的是一级标题
+=================
 
+我展示的是二级标题
+-----------------
+</code></pre>
 <h1 id="我展示的是一级标题"><a href="#我展示的是一级标题" class="headerlink" title="我展示的是一级标题"></a>我展示的是一级标题</h1><h2 id="我展示的是二级标题"><a href="#我展示的是二级标题" class="headerlink" title="我展示的是二级标题"></a>我展示的是二级标题</h2><blockquote>
 <p>2.使用 # 号标记</p>
 </blockquote>
 <p>使用 # 号可表示 1-6 级标题，一级标题对应一个 # 号，二级标题对应两个 # 号，以此类推。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+```
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+```
 ## 二级标题
 ### 三级标题
 #### 四级标题
@@ -488,35 +503,61 @@
 <h1 id="P03-Markdown-段落"><a href="#P03-Markdown-段落" class="headerlink" title="P03 Markdown 段落"></a>P03 Markdown 段落</h1><p>Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。</p>
 
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>Markdown 可以使用以下几种字体</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">_斜体文本_</span><br><span class="line">**粗体文本**</span><br><span class="line">__粗体文本__</span><br><span class="line">***粗斜体文本***</span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
-
+<pre><code>*斜体文本*
+_斜体文本_
+**粗体文本**
+__粗体文本__
+***粗斜体文本***
+___粗斜体文本___
+</code></pre>
 <p>显示效果如下所示：</p>
 <p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong><br><strong><em>粗斜体文本</em></strong></p>
 <h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line"></span><br><span class="line">*****</span><br><span class="line"></span><br><span class="line">- - -</span><br><span class="line"></span><br><span class="line">----------</span><br></pre></td></tr></table></figure>
+<pre><code>***
 
+* * *
+
+*****
+
+- - -
+
+----------
+</code></pre>
 <hr>
 <hr>
 <hr>
 <hr>
 <hr>
 <h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 ~~ 即可，实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~BAIDU.COM~~</span><br></pre></td></tr></table></figure>
-
+<pre><code>~~BAIDU.COM~~
+</code></pre>
 <p><del>BAIDU.COM</del></p>
 <h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>下划线可以通过 HTML 的 <code>&lt;u&gt;</code> 标签来实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;带下划线文本&lt;&#x2F;u&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>&lt;u&gt;带下划线文本&lt;/u&gt;
+</code></pre>
 <p><u>带下划线文本</u></p>
 <h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>脚注是对文本的补充说明。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">创建脚注格式类似这样 [^RUNOOB]。</span><br><span class="line"></span><br><span class="line">[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！</span><br></pre></td></tr></table></figure>
+<pre><code>创建脚注格式类似这样 [^RUNOOB]。
 
+[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！
+</code></pre>
 <p>创建脚注格式类似这样 [^runoob]。</p>
 <p>[^runoob]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！</p>
 <h1 id="P04-Markdown-列表"><a href="#P04-Markdown-列表" class="headerlink" title="P04 Markdown 列表"></a>P04 Markdown 列表</h1><p>Markdown 支持有序列表和无序列表。</p>
 <p>无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项</span><br><span class="line"></span><br><span class="line">+ 第一项</span><br><span class="line">+ 第二项</span><br><span class="line">+ 第三项</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 第一项</span><br><span class="line">- 第二项</span><br><span class="line">- 第三项</span><br></pre></td></tr></table></figure>
+<pre><code>* 第一项
+* 第二项
+* 第三项
 
++ 第一项
++ 第二项
++ 第三项
+
+
+- 第一项
+- 第二项
+- 第三项
+</code></pre>
 <ul>
 <li>第一项</li>
 <li>第二项</li>
@@ -533,15 +574,22 @@
 <li>第三项</li>
 </ul>
 <p>有序列表使用数字并加上 . 号来表示，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 第一项</span><br><span class="line">2. 第二项</span><br><span class="line">3. 第三项</span><br></pre></td></tr></table></figure>
-
+<pre><code>1. 第一项
+2. 第二项
+3. 第三项
+</code></pre>
 <ol>
 <li>第一项</li>
 <li>第二项</li>
 <li>第三项</li>
 </ol>
-<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 第一项：</span><br><span class="line">    - 第一项嵌套的第一个元素</span><br><span class="line">    - 第一项嵌套的第二个元素</span><br><span class="line">2. 第二项：</span><br><span class="line">    - 第二项嵌套的第一个元素</span><br><span class="line">    - 第二项嵌套的第二个元素</span><br></pre></td></tr></table></figure>
-
+<h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><pre><code>1. 第一项：
+    - 第一项嵌套的第一个元素
+    - 第一项嵌套的第二个元素
+2. 第二项：
+    - 第二项嵌套的第一个元素
+    - 第二项嵌套的第二个元素
+</code></pre>
 <ol>
 <li>第一项：<ul>
 <li>第一项嵌套的第一个元素</li>
@@ -555,14 +603,18 @@
 </li>
 </ol>
 <h1 id="P05-Markdown-区块"><a href="#P05-Markdown-区块" class="headerlink" title="P05 Markdown 区块"></a>P05 Markdown 区块</h1><p>Markdown 区块引用是在段落开头使用 <code>&gt;</code> 符号 ，然后后面紧跟一个空格符号：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 区块引用</span><br><span class="line">&gt; 菜鸟教程</span><br><span class="line">&gt; 学的不仅是技术更是梦想</span><br></pre></td></tr></table></figure>
-
+<pre><code>&gt; 区块引用
+&gt; 菜鸟教程
+&gt; 学的不仅是技术更是梦想
+</code></pre>
 <blockquote>
 <p>区块引用<br>菜鸟教程<br>学的不仅是技术更是梦想</p>
 </blockquote>
 <p>另外区块是可以嵌套的，一个 <code>&gt;</code> 符号是最外层，两个 <code>&gt;</code> 符号是第一层嵌套，以此类推：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 最外层</span><br><span class="line">&gt; &gt; 第一层嵌套</span><br><span class="line">&gt; &gt; &gt; 第二层嵌套</span><br></pre></td></tr></table></figure>
-
+<pre><code>&gt; 最外层
+&gt; &gt; 第一层嵌套
+&gt; &gt; &gt; 第二层嵌套
+</code></pre>
 <blockquote>
 <p>最外层</p>
 <blockquote>
@@ -573,8 +625,13 @@
 </blockquote>
 </blockquote>
 <h2 id="区块中使用列表"><a href="#区块中使用列表" class="headerlink" title="区块中使用列表"></a>区块中使用列表</h2><p>区块中使用列表实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; 区块中使用列表</span><br><span class="line">&gt; 1. 第一项</span><br><span class="line">&gt; 2. 第二项</span><br><span class="line">&gt; + 第一项</span><br><span class="line">&gt; + 第二项</span><br><span class="line">&gt; + 第三项</span><br></pre></td></tr></table></figure>
-
+<pre><code>&gt; 区块中使用列表
+&gt; 1. 第一项
+&gt; 2. 第二项
+&gt; + 第一项
+&gt; + 第二项
+&gt; + 第三项
+</code></pre>
 <blockquote>
 <p>区块中使用列表</p>
 <ol>
@@ -589,8 +646,11 @@
 </blockquote>
 <h2 id="列表中使用区块"><a href="#列表中使用区块" class="headerlink" title="列表中使用区块"></a>列表中使用区块</h2><p>如果要在列表项目内放进区块，那么就需要在 <code>&gt;</code> 前添加四个空格的缩进。</p>
 <p>区块中使用列表实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">    &gt; 菜鸟教程</span><br><span class="line">    &gt; 学的不仅是技术更是梦想</span><br><span class="line">* 第二项</span><br></pre></td></tr></table></figure>
-
+<pre><code>* 第一项
+    &gt; 菜鸟教程
+    &gt; 学的不仅是技术更是梦想
+* 第二项
+</code></pre>
 <ul>
 <li>第一项<blockquote>
 <p>菜鸟教程<br>学的不仅是技术更是梦想</p>
@@ -599,38 +659,59 @@
 <li>第二项</li>
 </ul>
 <h1 id="P06-Markdown-代码"><a href="#P06-Markdown-代码" class="headerlink" title="P06 Markdown 代码"></a>P06 Markdown 代码</h1><p>如果是段落上的一个函数或片段的代码可以用反引号把它包起来<kbd>`</kbd>，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;printf()&#96; 函数</span><br></pre></td></tr></table></figure>
-
+<pre><code>`printf()` 函数
+</code></pre>
 <p><code>printf()</code> 函数</p>
 <h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>代码区块使用 4 个空格或者一个制表符（Tab 键）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function () &#123;</span><br><span class="line">alert(&#39;RUNOOB&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<pre><code>    $(document).ready(function () &#123;
+    alert(&#39;RUNOOB&#39;);
+    &#125;);
+</code></pre>
 <pre><code>$(document).ready(function () &#123;
 alert(&#39;RUNOOB&#39;);
 &#125;);
 </code></pre>
 <p>也可以用 ``` 包裹一段代码，并指定一种语言（也可以不指定）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;javascript</span><br><span class="line">$(document).ready(function () &#123;</span><br><span class="line">    alert(&#39;RUNOOB&#39;);</span><br><span class="line">&#125;);</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;RUNOOB&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<pre><code>```javascript
+$(document).ready(function () &#123;
+    alert(&#39;RUNOOB&#39;);
+&#125;);
+```
+</code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'RUNOOB'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h1 id="P07-Markdown-链接"><a href="#P07-Markdown-链接" class="headerlink" title="P07 Markdown 链接"></a>P07 Markdown 链接</h1><p>链接使用方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[链接名称](链接地址)</span><br><span class="line">或者</span><br><span class="line">&lt;链接地址&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>[链接名称](链接地址)
+或者
+&lt;链接地址&gt;
+</code></pre>
 <p>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [菜鸟教程](https:&#x2F;&#x2F;www.runoob.com)</span><br></pre></td></tr></table></figure>
+<pre><code>这是一个链接 [菜鸟教程](https://www.runoob.com)
+</code></pre>
 <p>显示结果如下：</p>
 <p>这是一个链接 <a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
 <blockquote>
 <p>直接使用链接地址：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;https:&#x2F;&#x2F;www.runoob.com&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;https://www.runoob.com&gt;
+</code></pre>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/">https://www.runoob.com</a></p>
-<h2 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">链接也可以用变量来代替，文档末尾附带变量地址：</span><br><span class="line">这个链接用 1 作为网址变量 [Google][1]</span><br><span class="line">这个链接用 runoob 作为网址变量 [Runoob][runoob]</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">  [1]: http:&#x2F;&#x2F;www.google.com&#x2F;</span><br><span class="line">  [runoob]: http:&#x2F;&#x2F;www.runoob.com&#x2F;</span><br></pre></td></tr></table></figure>
+<h2 id="高级链接"><a href="#高级链接" class="headerlink" title="高级链接"></a>高级链接</h2><pre><code>链接也可以用变量来代替，文档末尾附带变量地址：
+这个链接用 1 作为网址变量 [Google][1]
+这个链接用 runoob 作为网址变量 [Runoob][runoob]
+然后在文档的结尾为变量赋值（网址）
+
+  [1]: http://www.google.com/
+  [runoob]: http://www.runoob.com/
+</code></pre>
 <p>这个链接用 1 作为网址变量 <a target="_blank" rel="noopener" href="http://www.google.com/">Google</a><br>这个链接用 runoob 作为网址变量 <a target="_blank" rel="noopener" href="http://www.runoob.com/">Runoob</a></p>
 <h1 id="P08-Markdown-图片"><a href="#P08-Markdown-图片" class="headerlink" title="P08 Markdown 图片"></a>P08 Markdown 图片</h1><p>Markdown 图片语法格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![alt 属性文本](图片地址)</span><br><span class="line"></span><br><span class="line">![alt 属性文本](图片地址 &quot;可选标题&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code>![alt 属性文本](图片地址)
+
+![alt 属性文本](图片地址 &quot;可选标题&quot;)
+</code></pre>
 <blockquote>
 <p>开头一个感叹号 !</p>
 </blockquote>
@@ -641,25 +722,34 @@ alert(&#39;RUNOOB&#39;);
 <p>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</p>
 </blockquote>
 <p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![RUNOOB 图标](http:&#x2F;&#x2F;static.runoob.com&#x2F;images&#x2F;runoob-logo.png)</span><br><span class="line"></span><br><span class="line">![RUNOOB 图标](http:&#x2F;&#x2F;static.runoob.com&#x2F;images&#x2F;runoob-logo.png &quot;RUNOOB&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code>![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png)
 
+![RUNOOB 图标](http://static.runoob.com/images/runoob-logo.png &quot;RUNOOB&quot;)
+</code></pre>
 <p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标"></p>
 <p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB"></p>
 <p>也可以像网址那样对图片网址使用变量:</p>
 <p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个链接用 1 作为网址变量 [RUNOOB][1].</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">[1]: http:&#x2F;&#x2F;static.runoob.com&#x2F;images&#x2F;runoob-logo.png</span><br></pre></td></tr></table></figure>
+<pre><code>这个链接用 1 作为网址变量 [RUNOOB][1].
+然后在文档的结尾为变量赋值（网址）
 
+[1]: http://static.runoob.com/images/runoob-logo.png
+</code></pre>
 <p>这个链接用 1 作为网址变量 <a target="_blank" rel="noopener" href="http://static.runoob.com/images/runoob-logo.png">RUNOOB</a>.</p>
 <blockquote>
 <p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <code>img</code> 标签。、</p>
 </blockquote>
 <p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;http:&#x2F;&#x2F;static.runoob.com&#x2F;images&#x2F;runoob-logo.png&quot; width&#x3D;&quot;50%&quot;&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;img src=&quot;http://static.runoob.com/images/runoob-logo.png&quot; width=&quot;50%&quot;&gt;
+</code></pre>
 <img src="http://static.runoob.com/images/runoob-logo.png" width="50%">
 
 <h1 id="P09-Markdown-表格"><a href="#P09-Markdown-表格" class="headerlink" title="P09 Markdown 表格"></a>P09 Markdown 表格</h1><p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
-
+<pre><code>|  表头   | 表头  |
+|  ----  | ----  |
+| 单元格  | 单元格 |
+| 单元格  | 单元格 |
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -686,8 +776,11 @@ alert(&#39;RUNOOB&#39;);
 <li>:-: 设置内容和标题栏居中对齐。</li>
 </ul>
 <p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 右对齐 | 居中对齐 |</span><br><span class="line">| :-----| ----: | :----: |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br><span class="line">| 单元格 | 单元格 | 单元格 |</span><br></pre></td></tr></table></figure>
-
+<pre><code>| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -710,17 +803,31 @@ alert(&#39;RUNOOB&#39;);
 <h1 id="P10-Markdown-高级技巧"><a href="#P10-Markdown-高级技巧" class="headerlink" title="P10 Markdown 高级技巧"></a>P10 Markdown 高级技巧</h1><h2 id="支持的-HTML-元素"><a href="#支持的-HTML-元素" class="headerlink" title="支持的 HTML 元素"></a>支持的 HTML 元素</h2><p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。</p>
 <p>目前支持的 HTML 元素有：<code>&lt;kbd&gt;</code> <code>&lt;b&gt;</code> <code>&lt;i&gt;</code> <code>&lt;em&gt;</code> <code>&lt;sup&gt;</code> <code>&lt;sub&gt;</code> <code>&lt;br&gt;</code>等</p>
 <p>如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Alt&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Del&lt;&#x2F;kbd&gt; 重启电脑</span><br></pre></td></tr></table></figure>
+<pre><code>使用 &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; 重启电脑
+</code></pre>
 <p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑</p>
 <h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><p>Markdown 使用了很多特殊符号来表示特定的意义，如果需要显示特定的符号则需要使用转义字符，Markdown 使用反斜杠转义特殊字符：</p>
 <p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**文本加粗** </span><br><span class="line">\*\* 正常显示星号 \*\*</span><br></pre></td></tr></table></figure>
+<pre><code>**文本加粗** 
+\*\* 正常显示星号 \*\*
+</code></pre>
 <p><strong>文本加粗</strong><br>** 正常显示星号 **</p>
 <p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\   反斜线</span><br><span class="line">&#96;   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   下划线</span><br><span class="line">&#123;&#125;  花括号</span><br><span class="line">[]  方括号</span><br><span class="line">()  小括号</span><br><span class="line">#   井字号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   感叹号</span><br></pre></td></tr></table></figure>
-
-<h1 id="P11-视频"><a href="#P11-视频" class="headerlink" title="P11 视频"></a>P11 视频</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;video src&#x3D;&quot;https:&#x2F;&#x2F;v-cdn.zjol.com.cn&#x2F;276985.mp4&quot; controls&#x3D;&quot;controls&quot; width&#x3D;&quot;100%&quot;&gt;您的浏览器不支持播放该视频！&lt;&#x2F;video&gt;</span><br></pre></td></tr></table></figure>
-
+<pre><code>\   反斜线
+`   反引号
+*   星号
+_   下划线
+&#123;&#125;  花括号
+[]  方括号
+()  小括号
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   感叹号
+</code></pre>
+<h1 id="P11-视频"><a href="#P11-视频" class="headerlink" title="P11 视频"></a>P11 视频</h1><pre><code>&lt;video src=&quot;https://v-cdn.zjol.com.cn/276985.mp4&quot; controls=&quot;controls&quot; width=&quot;100%&quot;&gt;您的浏览器不支持播放该视频！&lt;/video&gt;
+</code></pre>
 <p><video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls="controls" width="100%">您的浏览器不支持播放该视频！</video></p>
 
                 
@@ -971,13 +1078,13 @@ alert(&#39;RUNOOB&#39;);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/07/hello-world/">
+                <a href="/2019/09/05/markdown%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Markdown 简介">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Markdown 简介</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -988,14 +1095,14 @@ alert(&#39;RUNOOB&#39;);
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-09-05
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/es6/" class="post-category">
-                                    es6
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
@@ -1005,8 +1112,8 @@ alert(&#39;RUNOOB&#39;);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1017,16 +1124,16 @@ alert(&#39;RUNOOB&#39;);
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/05/text/">
+                <a href="/2019/09/05/%E4%BD%BF%E7%94%A8github%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="使用github存储图片">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">使用github存储图片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,28 +1150,19 @@ alert(&#39;RUNOOB&#39;);
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/nodejs/" class="post-category">
-                                    nodejs
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nodejs/">
-                        <span class="chip bg-color">nodejs</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
-                    </a>
-                    
-                    <a href="/tags/nvm/">
-                        <span class="chip bg-color">nvm</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
@@ -1267,7 +1365,7 @@ alert(&#39;RUNOOB&#39;);
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.3k</span>&nbsp;字
+                class="white-color">15.4k</span>&nbsp;字
             
             
             
@@ -1481,7 +1579,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 
 </body>
