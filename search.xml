@@ -56,31 +56,6 @@
     
     
     <entry>
-      <title>微信小程序开发遇到的那些坑</title>
-      <link href="2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9D%91/"/>
-      <url>2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9D%91/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><h1 id="微信小程序开发遇到的那些坑"><a href="#微信小程序开发遇到的那些坑" class="headerlink" title="微信小程序开发遇到的那些坑"></a>微信小程序开发遇到的那些坑</h1><h2 id="一、Webview-内嵌-H5-页面不可以使用微信支付"><a href="#一、Webview-内嵌-H5-页面不可以使用微信支付" class="headerlink" title="一、Webview 内嵌 H5 页面不可以使用微信支付"></a>一、Webview 内嵌 H5 页面不可以使用微信支付</h2><p>小程序的 web-view 不支持微信支付，只能通过跳回小程序调用小程序支付的 API。实现大体思路：在 H5 页面获取支付参数，然后判断是否在小程序环境中，如果在，获取到支付参数后返回到小程序并将支付参数传给小程序，小程序调用 wx.requestPayment(OBJECT)接口完成支付，需要注意的是，获取支付参数的 appId 为小程序的 appId.下面是解决方案：</p><ul><li>在 H5 页面引入 JSSDK 1.3.2,判断小程序环境，获取支付参数，将支付参数返回给小程序，这里需要注意的是“package”参数，因为其包含“=”，因此传的时候注意使用 encodeURIComponent 编码，获取后 decodeURIComponent 解码</li><li>在小程序新建一个空白 page,在 onLoad 中获取参数，获取成功后发起微信支付请求</li><li>支付完成，处理相关逻辑</li></ul><h2 id="二、小程序获取不到-unionId"><a href="#二、小程序获取不到-unionId" class="headerlink" title="二、小程序获取不到 unionId"></a>二、小程序获取不到 unionId</h2><p>在小程序发布到线上之后发现有些新用户在登录页面卡死，最后发现是没有获取到 unionId,为什么获取不到 unionId 呢，看下微信对 UnionId 机制的原文解释：<br>如果开发者拥有多个移动应用、网站应用、和公众帐号（包括小程序），可通过 unionid 来区分用户的唯一性，因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号（包括小程序），用户的 unionid 是唯一的。换句话说，同一用户，对同一个微信开放平台下的不同应用，unionid 是相同的。</p><p>同一个微信开放平台下的相同主体的 App、公众号、小程序，如果用户已经关注公众号，或者曾经登录过 App 或公众号，则用户打开小程序时，开发者可以直接通过 wx.login 获取到该用户 UnionID，无须用户再次授权。</p><p><strong>注意： 后边这句话的描述</strong></p><p>用户关注过公众号，或者曾经登录过 App 或公众号，则用户打开小程序时，开发者可以直接通过 wx.login 获取到该用户 UnionID<br><strong>即：如果用户没有关注过公众号，或者没有登陆过 App，通过 wx.login 是无法获取到该用户 UnionID，只能通过 wx.getUserInfo 来获取 UnionId</strong><br>经验证，系统不存在 UnionId 的小程序用户都是没有关注公众号或未在 App 中使用微信授权的用户<br>解决方案：<br>获取小程序 UnionId 获取不到时，wx.getUserInfo 可以获取敏感数据，其中包含 UnionId 字段。</p><h2 id="三、扫普通链接二维码打开小程序"><a href="#三、扫普通链接二维码打开小程序" class="headerlink" title="三、扫普通链接二维码打开小程序"></a>三、扫普通链接二维码打开小程序</h2><p>（使用该功能，小程序必须已经是已发布状态）小程序提供了扫描普通二维码跳转小程序的功能，首先在微信公众平台配置二维码规则，域名路径必须是校验文件所在路径，可以配置测试链接进行测试，可以配置最多 5 个测试链接，可以指定测试链接打开的测试范围（开发、测试、正式），必须是具有体验权限的用户才可以进行测试，非体验用户进入正式版本。规则发布后，配置符合规则的链接均可进入到小程序。</p><h2 id="四、可拖拽元素遇上-canvas-二维码"><a href="#四、可拖拽元素遇上-canvas-二维码" class="headerlink" title="四、可拖拽元素遇上 canvas 二维码"></a>四、可拖拽元素遇上 canvas 二维码</h2><p>刚开始做这个可拖拽元素的时候，是准备将其做成一个组件，在每个需要的地方引入即可，但是有一个很大的问题就是所在页面有一个 canvas 生成的二维码，原生组件在小程序中的层级是最高的，即不管怎么布局或者给 z-index 都是不生效的，所以拖拽元素拖拽过程中会在二维码下面。</p><p>解决这个问题的过程中遇到了很多坑，首先想到的是小程序中有没有直接生成二维码图片的插件，有是有，但是我的字符串太长了，生成的 base64 编码均太长了，所以我还是用的 weapp-qrcode.js 插件，这个插件自带导出图片的方法，用的就是 wx.canvasToTempFilePath 将画布导出生成图片，页面上 canvas 所在位置放置一个 image 组件，将 canvas 移到可视区域外面，但是生成的图片一直是乱的，原来是我没给 canvas 样式的高度和宽度导致生成出现问题，但是这样还是在一些安卓机上出现问题，调用 wx.canvasToTempFilePath 已经是在 draw 回调之后了，但是还是需要给延时才可以，在这里我给的 500ms,基本上就可以了。</p><p>原生组件层级最高的问题解决了，但是又出现一个问题，就是可拖拽元素是一个组件，所在页面又有很多按钮，如果直接将可拖拽组件的层级设置最高，那么按钮就不可点击，如果不设置最高，那么就不可拖拽了，有两种方式可以解决，一种是将按钮以插槽的方式放在组件中，另一种是不将拖拽元素写成组件，之间将 movable-area 放在 wxml 的最外层，我采用的是第二种，如果每个按钮都写成插槽的话维护起来太麻烦了。</p><h2 id="五、微信小程序缓存——-缓存时效性"><a href="#五、微信小程序缓存——-缓存时效性" class="headerlink" title="五、微信小程序缓存——-缓存时效性"></a>五、微信小程序缓存——-缓存时效性</h2><pre><code>/** * 数据缓存没有设置有效期 */class Storage {  /**   * 获取缓存   * @param String $key  key   * @param String $def  若想要无缓存时，返回默认值则get('key','默认值')（支持字符串、json、数组、boolean等等）   * @return value;   */  get(key, def = '') {    const timeout = parseInt(wx.getStorageSync(`${key}__separator__`) || 0);    // 过期失效    if (timeout) {      if (Date.now() &gt; timeout) {        this.remove(key);        return;      }    }    let value = wx.getStorageSync(key);    return value ? value : def;  }  /**   * 设置缓存   * @param String $key       key   * @param String $value     value（支持字符串、json、数组、boolean等等）   * @param Number $timeout   过期时间（单位：分钟）不设置时间即为永久保存   * @return value;   */  put(key, value, timeout = 0) {    let _timeout = parseInt(timeout);    wx.setStorageSync(key, value);    if (_timeout) {      wx.setStorageSync(`${key}__separator__`, Date.now() + 1000 * 60 * _timeout);    } else {      wx.removeStorageSync(`${key}__separator__`);    }    return value;  }  remove(key) {    wx.removeStorageSync(key);    wx.removeStorageSync(`${key}__separator__`);    return undefined;  }}export {  Storage}</code></pre><h2 id="六、小程序跳转另小程序遇到的坑（监听返回）"><a href="#六、小程序跳转另小程序遇到的坑（监听返回）" class="headerlink" title="六、小程序跳转另小程序遇到的坑（监听返回）"></a>六、小程序跳转另小程序遇到的坑（监听返回）</h2><p>场景：在跳转另一个小程序之前需要调用接口获取跳转所需参数，在另一个小程序返回时需要重新调用接口或许参数。</p><p>问题：首先想到的是点击跳转的时候调用接口，之后 wx.navigateToMiniProgram 跳转，将接口返回数据携带上，但是，这种不是用户直接触发的跳转，微信不支持。</p><p>然后，那就先在页面的 onload 事件中直接调用一次，然后再监听另一个小程序返回，再调用一次接口，文档上写的很明白，监听 App.onShow 就好了，于是我在该页面的 onshow 直接 wx.onAppShow 监听场景值为 1038，但是！！！这里遇到了巨坑，第一次返回，wx.onAppShow 调用一次，第二次返回，wx.onAppShow 调用两次，第三次返回，wx.onAppShow 调用三次，直接导致整个流程出问题了。</p><p>解决：思考了好久，决定不用 wx.onAppShow 监听场景值的办法，直接在该页面直接定义一个变量，比如 navigateToOther,默认为 false,跳转成功后置为 true，然后在 onshow 里判断是否为 true，如果为 true，调用接口，将 navigateToOther 置为 false。完美解决！</p><h2 id="七、小程序-H5-页面分享"><a href="#七、小程序-H5-页面分享" class="headerlink" title="七、小程序 H5 页面分享"></a>七、小程序 H5 页面分享</h2><p>H5 页面中的分享转发按钮不能直接分享给好友，只能用折中的方式来做，点击 H5 页面的分享按钮时，弹出提示框，指向右上角的转发按钮，并通过 wx.miniProgram.postMessage 将所需信息发送给小程序，用户点击转发按钮时可以通过 bindmessage 接收到消息。</p><h2 id="八、webview-刷新"><a href="#八、webview-刷新" class="headerlink" title="八、webview 刷新"></a>八、webview 刷新</h2><p>小程序嵌套 H5 页面时，有时页面在来回切换时需要刷新该 H5 页面，但是微信未提供相关接口，但是可以通过折中的方式来实现。</p><p>首先，让 webview 做条件渲染：</p><pre><code>&lt;web-view wx:if="{{url}}" src="{{url}}" /&gt;  data: {    base_url: config.kalatong_base_url + '……',    url: ''  },  /**   * 生命周期函数--监听页面加载   */  onLoad: function(options) {    let url = this.data.base_url + "#wechat_redirect"    this.data.url = decodeURIComponent(url)  },  /**   * 生命周期函数--监听页面显示   */  onShow: function() {    this.refreshWebview()  },</code></pre><p>需要刷新时，先把 url 设为空，销毁当前 webview。然后再把 url 设为当前值。如下：</p><pre><code>refreshWebview: function () {    let tmpUrl = this.data.url;    this.setData({      url: ''    });    setTimeout(() =&gt; {      this.setData({        url: tmpUrl      })    }, 500);  }</code></pre><p>这样便可以在不影响导航栏历史的情况下刷新页面，也可以是跳转 url。</p><p>这里 setData 之后，页面内容的更新应该是异步执行的，因此我们后一次修改 url 需要延时一小段时间，否则会出现 error。</p><p>猜测 setData 后页面实际更新应该是在下一次的 requestAnimationFrame，因此如果页面完全不卡顿可能 16ms 就可以了，保险起见，我设了 100ms。<br>但是 100ms 也不保险，有些页面会空白，最后置成 500ms。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 微信小程序 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 微信小程序 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="2021/04/06/hello-world/"/>
       <url>2021/04/06/hello-world/</url>
@@ -106,23 +81,23 @@
     
     
     <entry>
-      <title>使用github存储图片</title>
-      <link href="2021/04/05/%E4%BD%BF%E7%94%A8github%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/"/>
-      <url>2021/04/05/%E4%BD%BF%E7%94%A8github%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/</url>
+      <title>微信小程序开发遇到的那些坑</title>
+      <link href="2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9D%91/"/>
+      <url>2021/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9D%91/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><h4 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h4><p>首先要在Github上创建一个图片管理仓库，方法很简单，随便命名，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/new-repository.png?token=AKUA4KLROOR4JNPFMPYRXMC6SPKNE" width="100%"></p><h4 id="2-克隆仓库"><a href="#2-克隆仓库" class="headerlink" title="2.克隆仓库"></a>2.克隆仓库</h4><p>到Github的客户端将刚刚创建的仓库clone到你指定的位置，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/clone-repository.png?token=AKUA4KNBZWL3CIG5CFO7Q7S6SPKPI" width="100%"></p><h4 id="3-上传图片"><a href="#3-上传图片" class="headerlink" title="3.上传图片"></a>3.上传图片</h4><p>点击<code>open this repository</code>，将要上传的图片放进改文件夹，返回github客户端填写描述，点击<code>Commit to master</code>即可自动进入下一页，此时还没有将图片上传到仓库，需要在此点击一下右上角<code>Publish</code>将图片上传到仓库，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/open-file.png?token=AKUA4KMMPRLNDI44TIOK2AC6SPKR4" width="100%"><br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/update-img.png?token=AKUA4KMVRR6HVL5AU5ETQOC6SPKUS" width="100%"></p><h4 id="4-获取链接"><a href="#4-获取链接" class="headerlink" title="4.获取链接"></a>4.获取链接</h4><p>待上传成功后打开自己的Github主页找到图片仓库进入，选择其中一张图片点击，进入图片详情后点击<code>Download</code>进入图片的下载链接页。</p><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/download-img.png?token=AKUA4KKAKUYQVD2LG4WAPQK6SPKY2" width="100%"><p>至此，成功获取到链接。</p>]]></content>
+        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><h1 id="微信小程序开发遇到的那些坑"><a href="#微信小程序开发遇到的那些坑" class="headerlink" title="微信小程序开发遇到的那些坑"></a>微信小程序开发遇到的那些坑</h1><h2 id="一、Webview-内嵌-H5-页面不可以使用微信支付"><a href="#一、Webview-内嵌-H5-页面不可以使用微信支付" class="headerlink" title="一、Webview 内嵌 H5 页面不可以使用微信支付"></a>一、Webview 内嵌 H5 页面不可以使用微信支付</h2><p>小程序的 web-view 不支持微信支付，只能通过跳回小程序调用小程序支付的 API。实现大体思路：在 H5 页面获取支付参数，然后判断是否在小程序环境中，如果在，获取到支付参数后返回到小程序并将支付参数传给小程序，小程序调用 wx.requestPayment(OBJECT)接口完成支付，需要注意的是，获取支付参数的 appId 为小程序的 appId.下面是解决方案：</p><ul><li>在 H5 页面引入 JSSDK 1.3.2,判断小程序环境，获取支付参数，将支付参数返回给小程序，这里需要注意的是“package”参数，因为其包含“=”，因此传的时候注意使用 encodeURIComponent 编码，获取后 decodeURIComponent 解码</li><li>在小程序新建一个空白 page,在 onLoad 中获取参数，获取成功后发起微信支付请求</li><li>支付完成，处理相关逻辑</li></ul><h2 id="二、小程序获取不到-unionId"><a href="#二、小程序获取不到-unionId" class="headerlink" title="二、小程序获取不到 unionId"></a>二、小程序获取不到 unionId</h2><p>在小程序发布到线上之后发现有些新用户在登录页面卡死，最后发现是没有获取到 unionId,为什么获取不到 unionId 呢，看下微信对 UnionId 机制的原文解释：<br>如果开发者拥有多个移动应用、网站应用、和公众帐号（包括小程序），可通过 unionid 来区分用户的唯一性，因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号（包括小程序），用户的 unionid 是唯一的。换句话说，同一用户，对同一个微信开放平台下的不同应用，unionid 是相同的。</p><p>同一个微信开放平台下的相同主体的 App、公众号、小程序，如果用户已经关注公众号，或者曾经登录过 App 或公众号，则用户打开小程序时，开发者可以直接通过 wx.login 获取到该用户 UnionID，无须用户再次授权。</p><p><strong>注意： 后边这句话的描述</strong></p><p>用户关注过公众号，或者曾经登录过 App 或公众号，则用户打开小程序时，开发者可以直接通过 wx.login 获取到该用户 UnionID<br><strong>即：如果用户没有关注过公众号，或者没有登陆过 App，通过 wx.login 是无法获取到该用户 UnionID，只能通过 wx.getUserInfo 来获取 UnionId</strong><br>经验证，系统不存在 UnionId 的小程序用户都是没有关注公众号或未在 App 中使用微信授权的用户<br>解决方案：<br>获取小程序 UnionId 获取不到时，wx.getUserInfo 可以获取敏感数据，其中包含 UnionId 字段。</p><h2 id="三、扫普通链接二维码打开小程序"><a href="#三、扫普通链接二维码打开小程序" class="headerlink" title="三、扫普通链接二维码打开小程序"></a>三、扫普通链接二维码打开小程序</h2><p>（使用该功能，小程序必须已经是已发布状态）小程序提供了扫描普通二维码跳转小程序的功能，首先在微信公众平台配置二维码规则，域名路径必须是校验文件所在路径，可以配置测试链接进行测试，可以配置最多 5 个测试链接，可以指定测试链接打开的测试范围（开发、测试、正式），必须是具有体验权限的用户才可以进行测试，非体验用户进入正式版本。规则发布后，配置符合规则的链接均可进入到小程序。</p><h2 id="四、可拖拽元素遇上-canvas-二维码"><a href="#四、可拖拽元素遇上-canvas-二维码" class="headerlink" title="四、可拖拽元素遇上 canvas 二维码"></a>四、可拖拽元素遇上 canvas 二维码</h2><p>刚开始做这个可拖拽元素的时候，是准备将其做成一个组件，在每个需要的地方引入即可，但是有一个很大的问题就是所在页面有一个 canvas 生成的二维码，原生组件在小程序中的层级是最高的，即不管怎么布局或者给 z-index 都是不生效的，所以拖拽元素拖拽过程中会在二维码下面。</p><p>解决这个问题的过程中遇到了很多坑，首先想到的是小程序中有没有直接生成二维码图片的插件，有是有，但是我的字符串太长了，生成的 base64 编码均太长了，所以我还是用的 weapp-qrcode.js 插件，这个插件自带导出图片的方法，用的就是 wx.canvasToTempFilePath 将画布导出生成图片，页面上 canvas 所在位置放置一个 image 组件，将 canvas 移到可视区域外面，但是生成的图片一直是乱的，原来是我没给 canvas 样式的高度和宽度导致生成出现问题，但是这样还是在一些安卓机上出现问题，调用 wx.canvasToTempFilePath 已经是在 draw 回调之后了，但是还是需要给延时才可以，在这里我给的 500ms,基本上就可以了。</p><p>原生组件层级最高的问题解决了，但是又出现一个问题，就是可拖拽元素是一个组件，所在页面又有很多按钮，如果直接将可拖拽组件的层级设置最高，那么按钮就不可点击，如果不设置最高，那么就不可拖拽了，有两种方式可以解决，一种是将按钮以插槽的方式放在组件中，另一种是不将拖拽元素写成组件，之间将 movable-area 放在 wxml 的最外层，我采用的是第二种，如果每个按钮都写成插槽的话维护起来太麻烦了。</p><h2 id="五、微信小程序缓存——-缓存时效性"><a href="#五、微信小程序缓存——-缓存时效性" class="headerlink" title="五、微信小程序缓存——-缓存时效性"></a>五、微信小程序缓存——-缓存时效性</h2><pre><code>/** * 数据缓存没有设置有效期 */class Storage {  /**   * 获取缓存   * @param String $key  key   * @param String $def  若想要无缓存时，返回默认值则get('key','默认值')（支持字符串、json、数组、boolean等等）   * @return value;   */  get(key, def = '') {    const timeout = parseInt(wx.getStorageSync(`${key}__separator__`) || 0);    // 过期失效    if (timeout) {      if (Date.now() &gt; timeout) {        this.remove(key);        return;      }    }    let value = wx.getStorageSync(key);    return value ? value : def;  }  /**   * 设置缓存   * @param String $key       key   * @param String $value     value（支持字符串、json、数组、boolean等等）   * @param Number $timeout   过期时间（单位：分钟）不设置时间即为永久保存   * @return value;   */  put(key, value, timeout = 0) {    let _timeout = parseInt(timeout);    wx.setStorageSync(key, value);    if (_timeout) {      wx.setStorageSync(`${key}__separator__`, Date.now() + 1000 * 60 * _timeout);    } else {      wx.removeStorageSync(`${key}__separator__`);    }    return value;  }  remove(key) {    wx.removeStorageSync(key);    wx.removeStorageSync(`${key}__separator__`);    return undefined;  }}export {  Storage}</code></pre><h2 id="六、小程序跳转另小程序遇到的坑（监听返回）"><a href="#六、小程序跳转另小程序遇到的坑（监听返回）" class="headerlink" title="六、小程序跳转另小程序遇到的坑（监听返回）"></a>六、小程序跳转另小程序遇到的坑（监听返回）</h2><p>场景：在跳转另一个小程序之前需要调用接口获取跳转所需参数，在另一个小程序返回时需要重新调用接口或许参数。</p><p>问题：首先想到的是点击跳转的时候调用接口，之后 wx.navigateToMiniProgram 跳转，将接口返回数据携带上，但是，这种不是用户直接触发的跳转，微信不支持。</p><p>然后，那就先在页面的 onload 事件中直接调用一次，然后再监听另一个小程序返回，再调用一次接口，文档上写的很明白，监听 App.onShow 就好了，于是我在该页面的 onshow 直接 wx.onAppShow 监听场景值为 1038，但是！！！这里遇到了巨坑，第一次返回，wx.onAppShow 调用一次，第二次返回，wx.onAppShow 调用两次，第三次返回，wx.onAppShow 调用三次，直接导致整个流程出问题了。</p><p>解决：思考了好久，决定不用 wx.onAppShow 监听场景值的办法，直接在该页面直接定义一个变量，比如 navigateToOther,默认为 false,跳转成功后置为 true，然后在 onshow 里判断是否为 true，如果为 true，调用接口，将 navigateToOther 置为 false。完美解决！</p><h2 id="七、小程序-H5-页面分享"><a href="#七、小程序-H5-页面分享" class="headerlink" title="七、小程序 H5 页面分享"></a>七、小程序 H5 页面分享</h2><p>H5 页面中的分享转发按钮不能直接分享给好友，只能用折中的方式来做，点击 H5 页面的分享按钮时，弹出提示框，指向右上角的转发按钮，并通过 wx.miniProgram.postMessage 将所需信息发送给小程序，用户点击转发按钮时可以通过 bindmessage 接收到消息。</p><h2 id="八、webview-刷新"><a href="#八、webview-刷新" class="headerlink" title="八、webview 刷新"></a>八、webview 刷新</h2><p>小程序嵌套 H5 页面时，有时页面在来回切换时需要刷新该 H5 页面，但是微信未提供相关接口，但是可以通过折中的方式来实现。</p><p>首先，让 webview 做条件渲染：</p><pre><code>&lt;web-view wx:if="{{url}}" src="{{url}}" /&gt;  data: {    base_url: config.kalatong_base_url + '……',    url: ''  },  /**   * 生命周期函数--监听页面加载   */  onLoad: function(options) {    let url = this.data.base_url + "#wechat_redirect"    this.data.url = decodeURIComponent(url)  },  /**   * 生命周期函数--监听页面显示   */  onShow: function() {    this.refreshWebview()  },</code></pre><p>需要刷新时，先把 url 设为空，销毁当前 webview。然后再把 url 设为当前值。如下：</p><pre><code>refreshWebview: function () {    let tmpUrl = this.data.url;    this.setData({      url: ''    });    setTimeout(() =&gt; {      this.setData({        url: tmpUrl      })    }, 500);  }</code></pre><p>这样便可以在不影响导航栏历史的情况下刷新页面，也可以是跳转 url。</p><p>这里 setData 之后，页面内容的更新应该是异步执行的，因此我们后一次修改 url 需要延时一小段时间，否则会出现 error。</p><p>猜测 setData 后页面实际更新应该是在下一次的 requestAnimationFrame，因此如果页面完全不卡顿可能 16ms 就可以了，保险起见，我设了 100ms。<br>但是 100ms 也不保险，有些页面会空白，最后置成 500ms。</p>]]></content>
       
       
       <categories>
           
-          <category> Git </category>
+          <category> 微信小程序 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Git </tag>
+            <tag> 微信小程序 </tag>
             
         </tags>
       
@@ -148,6 +123,31 @@
         <tags>
             
             <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用github存储图片</title>
+      <link href="2021/04/05/%E4%BD%BF%E7%94%A8github%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/"/>
+      <url>2021/04/05/%E4%BD%BF%E7%94%A8github%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><h4 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h4><p>首先要在Github上创建一个图片管理仓库，方法很简单，随便命名，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/new-repository.png?token=AKUA4KLROOR4JNPFMPYRXMC6SPKNE" width="100%"></p><h4 id="2-克隆仓库"><a href="#2-克隆仓库" class="headerlink" title="2.克隆仓库"></a>2.克隆仓库</h4><p>到Github的客户端将刚刚创建的仓库clone到你指定的位置，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/clone-repository.png?token=AKUA4KNBZWL3CIG5CFO7Q7S6SPKPI" width="100%"></p><h4 id="3-上传图片"><a href="#3-上传图片" class="headerlink" title="3.上传图片"></a>3.上传图片</h4><p>点击<code>open this repository</code>，将要上传的图片放进改文件夹，返回github客户端填写描述，点击<code>Commit to master</code>即可自动进入下一页，此时还没有将图片上传到仓库，需要在此点击一下右上角<code>Publish</code>将图片上传到仓库，如下图：<br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/open-file.png?token=AKUA4KMMPRLNDI44TIOK2AC6SPKR4" width="100%"><br><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/update-img.png?token=AKUA4KMVRR6HVL5AU5ETQOC6SPKUS" width="100%"></p><h4 id="4-获取链接"><a href="#4-获取链接" class="headerlink" title="4.获取链接"></a>4.获取链接</h4><p>待上传成功后打开自己的Github主页找到图片仓库进入，选择其中一张图片点击，进入图片详情后点击<code>Download</code>进入图片的下载链接页。</p><img src="https://raw.githubusercontent.com/printfCYQ/cyqblog-img/master/download-img.png?token=AKUA4KKAKUYQVD2LG4WAPQK6SPKY2" width="100%"><p>至此，成功获取到链接。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
       
