@@ -737,138 +737,149 @@
     
 
     
+
+    
+
+    
+
+    
         <style>
-    .valine-card {
+    .twikoo-card {
         margin: 1.5rem auto;
     }
 
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
+    .twikoo-card .card-content {
+        padding: 20px;
     }
 
-    #vcomments textarea {
+    #tcomments textarea {
         box-sizing: border-box;
-        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+        background: url("/") 100% 100% no-repeat;
     }
 
-    #vcomments p {
+    #tcomments p {
         margin: 2px 2px 10px;
         font-size: 1.05rem;
         line-height: 1.78rem;
     }
 
-    #vcomments blockquote p {
+    #tcomments blockquote p {
         text-indent: 0.2rem;
     }
 
-    #vcomments a {
+    #tcomments a {
         padding: 0 2px;
         color: #4cbf30;
         font-weight: 500;
         text-decoration: none;
     }
 
-    #vcomments img {
+    #tcomments img {
         max-width: 100%;
         height: auto;
         cursor: pointer;
     }
 
-    #vcomments ol li {
+    #tcomments ol li {
         list-style-type: decimal;
     }
 
-    #vcomments ol,
+    #tcomments ol,
     ul {
         display: block;
         padding-left: 2em;
         word-spacing: 0.05rem;
     }
 
-    #vcomments ul li,
+    #tcomments ul li,
     ol li {
         display: list-item;
         line-height: 1.8rem;
         font-size: 1rem;
     }
 
-    #vcomments ul li {
+    #tcomments ul li {
         list-style-type: disc;
     }
 
-    #vcomments ul ul li {
+    #tcomments ul ul li {
         list-style-type: circle;
     }
 
-    #vcomments table, th, td {
+    #tcomments table,
+    th,
+    td {
         padding: 12px 13px;
         border: 1px solid #dfe2e5;
     }
 
-    #vcomments table, th, td {
+    #tcomments table,
+    th,
+    td {
         border: 0;
     }
 
-    table tr:nth-child(2n), thead {
+    table tr:nth-child(2n),
+    thead {
         background-color: #fafafa;
     }
 
-    #vcomments table th {
+    #tcomments table th {
         background-color: #f2f2f2;
         min-width: 80px;
     }
 
-    #vcomments table td {
+    #tcomments table td {
         min-width: 80px;
     }
 
-    #vcomments h1 {
+    #tcomments h1 {
         font-size: 1.85rem;
         font-weight: bold;
         line-height: 2.2rem;
     }
 
-    #vcomments h2 {
+    #tcomments h2 {
         font-size: 1.65rem;
         font-weight: bold;
         line-height: 1.9rem;
     }
 
-    #vcomments h3 {
+    #tcomments h3 {
         font-size: 1.45rem;
         font-weight: bold;
         line-height: 1.7rem;
     }
 
-    #vcomments h4 {
+    #tcomments h4 {
         font-size: 1.25rem;
         font-weight: bold;
         line-height: 1.5rem;
     }
 
-    #vcomments h5 {
+    #tcomments h5 {
         font-size: 1.1rem;
         font-weight: bold;
         line-height: 1.4rem;
     }
 
-    #vcomments h6 {
+    #tcomments h6 {
         font-size: 1rem;
         line-height: 1.3rem;
     }
 
-    #vcomments p {
+    #tcomments p {
         font-size: 1rem;
         line-height: 1.5rem;
     }
 
-    #vcomments hr {
+    #tcomments hr {
         margin: 12px 0;
         border: 0;
         border-top: 1px solid #ccc;
     }
 
-    #vcomments blockquote {
+    #tcomments blockquote {
         margin: 15px 0;
         border-left: 5px solid #42b983;
         padding: 1rem 0.8rem 0.3rem 0.8rem;
@@ -876,7 +887,7 @@
         background-color: rgba(66, 185, 131, .1);
     }
 
-    #vcomments pre {
+    #tcomments pre {
         font-family: monospace, monospace;
         padding: 1.2em;
         margin: .5em 0;
@@ -886,7 +897,7 @@
         tab-size: 4;
     }
 
-    #vcomments code {
+    #tcomments code {
         font-family: monospace, monospace;
         padding: 1px 3px;
         font-size: 0.92rem;
@@ -895,24 +906,25 @@
         border-radius: 2px;
     }
 
-    #vcomments pre code {
+    #tcomments pre code {
         font-family: monospace, monospace;
         padding: 0;
         color: #e8eaf6;
         background-color: #272822;
     }
 
-    #vcomments pre[class*="language-"] {
+    #tcomments pre[class*="language-"] {
         padding: 1.2em;
         margin: .5em 0;
     }
 
-    #vcomments code[class*="language-"],
+    #tcomments code[class*="language-"],
     pre[class*="language-"] {
         color: #e8eaf6;
     }
 
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
         position: inherit;
         margin-left: -1.3rem;
         margin-right: 0.4rem;
@@ -922,47 +934,51 @@
         visibility: visible;
     }
 
-    #vcomments b,
+    #tcomments b,
     strong {
         font-weight: bold;
     }
 
-    #vcomments dfn {
+    #tcomments dfn {
         font-style: italic;
     }
 
-    #vcomments small {
+    #tcomments small {
         font-size: 85%;
     }
 
-    #vcomments cite {
+    #tcomments cite {
         font-style: normal;
     }
 
-    #vcomments mark {
+    #tcomments mark {
         background-color: #fcf8e3;
         padding: .2em;
     }
 
-    #vcomments table, th, td {
+    #tcomments table,
+    th,
+    td {
         padding: 12px 13px;
         border: 1px solid #dfe2e5;
     }
 
-    table tr:nth-child(2n), thead {
+    table tr:nth-child(2n),
+    thead {
         background-color: #fafafa;
     }
 
-    #vcomments table th {
+    #tcomments table th {
         background-color: #f2f2f2;
         min-width: 80px;
     }
 
-    #vcomments table td {
+    #tcomments table td {
         min-width: 80px;
     }
 
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
         position: inherit;
         margin-left: -1.3rem;
         margin-right: 0.4rem;
@@ -973,40 +989,32 @@
     }
 </style>
 
-<div class="card valine-card" data-aos="fade-up">
+<div class="card twikoo-card" data-aos="fade-up">
     <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
-    <div id="vcomments" class="card-content" style="display: grid">
+    <div class="card-content" style="display: grid">
+        <div id="tcomments"></div>
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="/libs/twikoo/twikoo.all.min.js"></script>
 <script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'XMu1o25UqIcP7v6mWBbDXpBQ-gzGzoHsz',
-        appKey: 'Xy05B8NvGSIpx8zHlLhLzfRg',
-        notify: 'true' === 'true',
-        verify: 'true' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: 'just go go'
+    twikoo.init({
+        envId: 'cyqblog-0gah6quqffc5d71c',
+        el: '#tcomments',
+        region: '',
+        path: ''
+    }).then(function () {
+        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
+        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
+            if (tkInputs[tkInputsIndex]) {
+                tkInputs[tkInputsIndex].classList.add('browser-default');
+            }
+        }
     });
 </script>
-
-<!--酷Q推送-->
-
-
-    
-
-    
-
-    
 
     
 
@@ -1068,19 +1076,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/04/JS-%E6%8A%96%E9%9F%B3%E5%BE%88%E7%81%AB%E7%9A%84%E6%96%87%E5%AD%97%E6%97%B6%E9%92%9F/">
+                <a href="/2021/04/04/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="文字时钟">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="使用七牛云存储文件">
                         
-                        <span class="card-title">文字时钟</span>
+                        <span class="card-title">使用七牛云存储文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JS-文字时钟
+                            使用七牛云存储文件
                         
                     </div>
                     <div class="publish-info">
@@ -1091,8 +1099,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS/" class="post-category">
-                                    JS
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
                                 </a>
                             
                             
@@ -1102,8 +1110,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
