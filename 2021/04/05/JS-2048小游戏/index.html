@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="实现2048小游戏, gongchenghui,github">
+    <meta name="keywords" content="实现2048小游戏, printfCYQ,github">
     <meta name="description" content="真不错">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
 
 
@@ -91,6 +93,28 @@
       <i class="fa fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-rocket" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
     </a>
     
   </li>
@@ -172,6 +196,28 @@
 			    <i class="fa-fw fa fa-archive"></i>
 			
 			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-address-book"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-rocket"></i>
+			
+			友链
 		</a>
           
         </li>
@@ -419,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-07
+                    2021-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    7 分
                 </div>
                 
 
@@ -460,39 +506,39 @@
             <div id="articleContent">
                 <p>Welcome to [Hexo]</p>
 <h1 id="JS-实现2048小游戏"><a href="#JS-实现2048小游戏" class="headerlink" title="JS-实现2048小游戏"></a>JS-实现2048小游戏</h1><h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;html lang="en"&gt;
 
 &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Title&lt;/title&gt;
-    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
-    &lt;link href=&quot;index.css&quot; rel=&quot;stylesheet&quot; /&gt;
+    &lt;script src="index.js"&gt;&lt;/script&gt;
+    &lt;link href="index.css" rel="stylesheet" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;div id=&quot;my2048&quot;&gt;&lt;/div&gt;
+    &lt;div id="my2048"&gt;&lt;/div&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;
 </code></pre>
-<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>body, div, span, a &#123;
+<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>body, div, span, a {
     margin: 0;
     padding: 0;
-&#125;
+}
 
-#my2048 &#123;
+#my2048 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 300px;
     position: relative;
     background: #bbada0;
-&#125;
+}
 
-#my2048 div &#123;
+#my2048 div {
     position: absolute;
     display: inline-block;
     border: 0px;
-&#125;
+}
 </code></pre>
 <h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><pre><code>var my2048;
 var rows = 4;
@@ -502,265 +548,265 @@ var spacing = 12;
 var boardSet = [];
 var squareSet = [];
 var valueMap = [];
-var colorMapping = &#123;&quot;0&quot;: &quot;#ccc0b3&quot;, &quot;2&quot;: &quot;#eee4da&quot;, &quot;4&quot;: &quot;#ede0c8&quot;, &quot;8&quot;: &quot;#f2b179&quot;, &quot;16&quot;: &quot;#f59563&quot;, &quot;32&quot;: &quot;#f67e5f&quot;, &quot;64&quot;: &quot;#f65e3b&quot;, &quot;128&quot;: &quot;#edcf72&quot;, &quot;256&quot; : &quot;#edcc61&quot;, &quot;512&quot;: &quot;#9c0&quot;, &quot;1024&quot;: &quot;#33b5e5&quot;, &quot;2048&quot;: &quot;#09c&quot;, &quot;4096&quot;: &quot;#5b67ff&quot;&#125;;
-var directionEnum = &#123;left:&#123;x:-1, y:0, key:&quot;left&quot;&#125;, right:&#123;x:1, y:0, key:&quot;left&quot;&#125;, top:&#123;x:0, y:-1, key:&quot;top&quot;&#125;, down:&#123;x:0, y:1, key:&quot;top&quot;&#125;&#125;;
+var colorMapping = {"0": "#ccc0b3", "2": "#eee4da", "4": "#ede0c8", "8": "#f2b179", "16": "#f59563", "32": "#f67e5f", "64": "#f65e3b", "128": "#edcf72", "256" : "#edcc61", "512": "#9c0", "1024": "#33b5e5", "2048": "#09c", "4096": "#5b67ff"};
+var directionEnum = {left:{x:-1, y:0, key:"left"}, right:{x:1, y:0, key:"left"}, top:{x:0, y:-1, key:"top"}, down:{x:0, y:1, key:"top"}};
 var lock = true;
 var isChange = false;
 
-function move(direction) &#123;
-    if (isOver()) &#123;
-        alert(&quot;game over ~!&quot;);
+function move(direction) {
+    if (isOver()) {
+        alert("game over ~!");
         return;
-    &#125;
+    }
     var newSquareSet = analysisActions(direction);
     //收尾(保证最终一致性)
-    setTimeout(function () &#123;
+    setTimeout(function () {
         refresh(newSquareSet);
-        if (isChange) &#123;
+        if (isChange) {
             randGenerateSquare();
-        &#125;
+        }
         lock = true;
         isChange = false;
-    &#125;, 300);
-&#125;
+    }, 300);
+}
 
-function analysisActions(direction) &#123;
+function analysisActions(direction) {
     var newSquareSet = generateNullMap();
-    if (direction == directionEnum.left) &#123;//向左
-        console.log(&quot;向左&quot;);
-        for (var i = 0 ; i &lt; squareSet.length ; i ++) &#123;
+    if (direction == directionEnum.left) {//向左
+        console.log("向左");
+        for (var i = 0 ; i &lt; squareSet.length ; i ++) {
             var temp = [];
-            for (var j = 0 ; j &lt; squareSet[i].length ; j ++) &#123;
-                if (squareSet[i][j] != null) &#123;
+            for (var j = 0 ; j &lt; squareSet[i].length ; j ++) {
+                if (squareSet[i][j] != null) {
                     temp.push(squareSet[i][j]);
-                &#125;
-            &#125;
+                }
+            }
             temp = getNewLocation(temp);
-            for (var k = 0 ; k &lt; newSquareSet[i].length ; k ++) &#123;
-                if (temp[k]) &#123;
+            for (var k = 0 ; k &lt; newSquareSet[i].length ; k ++) {
+                if (temp[k]) {
                     newSquareSet[i][k] = temp[k];
-                &#125;
-            &#125;
-        &#125;
-    &#125; else if (direction == directionEnum.right) &#123;//向右
-        console.log(&quot;向右&quot;);
-        for (var i = 0 ; i &lt; squareSet.length ; i ++) &#123;
+                }
+            }
+        }
+    } else if (direction == directionEnum.right) {//向右
+        console.log("向右");
+        for (var i = 0 ; i &lt; squareSet.length ; i ++) {
             var temp = [];
-            for (var j = squareSet[i].length - 1 ; j &gt;= 0 ; j --) &#123;
-                if (squareSet[i][j] != null) &#123;
+            for (var j = squareSet[i].length - 1 ; j &gt;= 0 ; j --) {
+                if (squareSet[i][j] != null) {
                     temp.push(squareSet[i][j]);
-                &#125;
-            &#125;
+                }
+            }
             temp = getNewLocation(temp);
-            for (var k = newSquareSet[i].length - 1 ; k &gt;= 0 ; k --) &#123;
-                if (temp[newSquareSet[i].length - 1 - k]) &#123;
+            for (var k = newSquareSet[i].length - 1 ; k &gt;= 0 ; k --) {
+                if (temp[newSquareSet[i].length - 1 - k]) {
                     newSquareSet[i][k] = temp[newSquareSet[i].length - 1 - k];
-                &#125;
-            &#125;
-        &#125;
-    &#125; else if (direction == directionEnum.top) &#123;//向前
-        console.log(&quot;向前&quot;);
-        for (var j = 0 ; j &lt; squareSet[0].length ; j ++) &#123;
+                }
+            }
+        }
+    } else if (direction == directionEnum.top) {//向前
+        console.log("向前");
+        for (var j = 0 ; j &lt; squareSet[0].length ; j ++) {
             var temp = [];
-            for (var i = 0 ; i &lt; squareSet.length ; i ++) &#123;
-                if (squareSet[i][j] != null) &#123;
+            for (var i = 0 ; i &lt; squareSet.length ; i ++) {
+                if (squareSet[i][j] != null) {
                     temp.push(squareSet[i][j]);
-                &#125;
-            &#125;
+                }
+            }
             temp = getNewLocation(temp);
-            for (var k = 0 ; k &lt; newSquareSet.length ; k ++) &#123;
-                if (temp[k]) &#123;
+            for (var k = 0 ; k &lt; newSquareSet.length ; k ++) {
+                if (temp[k]) {
                     newSquareSet[k][j] = temp[k];
-                &#125;
-            &#125;
-        &#125;
-    &#125; else &#123;//向后
-        console.log(&quot;向后&quot;);
-        for (var j = 0 ; j &lt; squareSet[0].length ; j ++) &#123;
+                }
+            }
+        }
+    } else {//向后
+        console.log("向后");
+        for (var j = 0 ; j &lt; squareSet[0].length ; j ++) {
             var temp = [];
-            for (var i = squareSet.length - 1 ; i &gt;= 0 ; i --) &#123;
-                if (squareSet[i][j] != null) &#123;
+            for (var i = squareSet.length - 1 ; i &gt;= 0 ; i --) {
+                if (squareSet[i][j] != null) {
                     temp.push(squareSet[i][j]);
-                &#125;
-            &#125;
+                }
+            }
             temp = getNewLocation(temp);
-            for (var k = newSquareSet.length - 1 ; k &gt;= 0 ; k --) &#123;
-                if (temp[newSquareSet.length - 1 - k]) &#123;
+            for (var k = newSquareSet.length - 1 ; k &gt;= 0 ; k --) {
+                if (temp[newSquareSet.length - 1 - k]) {
                     newSquareSet[k][j] = temp[newSquareSet.length - 1 - k];
-                &#125;
-            &#125;
-        &#125;
-    &#125;
+                }
+            }
+        }
+    }
     //动画
-    for (var i = 0 ; i &lt; newSquareSet.length ; i ++) &#123;
-        for (var j = 0 ; j &lt; newSquareSet[i].length ; j ++) &#123;
-            if (newSquareSet[i][j] == null) &#123;
+    for (var i = 0 ; i &lt; newSquareSet.length ; i ++) {
+        for (var j = 0 ; j &lt; newSquareSet[i].length ; j ++) {
+            if (newSquareSet[i][j] == null) {
                 continue;
-            &#125;
-            newSquareSet[i][j].style.transition = direction.key + &quot; 0.3s&quot;;
-            newSquareSet[i][j].style.left = (j + 1) * spacing + j * squareWidth + &quot;px&quot;;
-            newSquareSet[i][j].style.top = (i + 1) * spacing + i * squareWidth + &quot;px&quot;;
-            if(newSquareSet[i][j].nextSquare) &#123;
-                newSquareSet[i][j].nextSquare.style.transition = direction.key + &quot; 0.3s&quot;;
-                newSquareSet[i][j].nextSquare.style.left = (j + 1) * spacing + j * squareWidth + &quot;px&quot;;
-                newSquareSet[i][j].nextSquare.style.top = (i + 1) * spacing + i * squareWidth + &quot;px&quot;;
-            &#125;
-        &#125;
-    &#125;
+            }
+            newSquareSet[i][j].style.transition = direction.key + " 0.3s";
+            newSquareSet[i][j].style.left = (j + 1) * spacing + j * squareWidth + "px";
+            newSquareSet[i][j].style.top = (i + 1) * spacing + i * squareWidth + "px";
+            if(newSquareSet[i][j].nextSquare) {
+                newSquareSet[i][j].nextSquare.style.transition = direction.key + " 0.3s";
+                newSquareSet[i][j].nextSquare.style.left = (j + 1) * spacing + j * squareWidth + "px";
+                newSquareSet[i][j].nextSquare.style.top = (i + 1) * spacing + i * squareWidth + "px";
+            }
+        }
+    }
     return newSquareSet;
-&#125;
+}
 
-function getNewLocation(arr) &#123;
-    if (arr.length == 0) &#123;
+function getNewLocation(arr) {
+    if (arr.length == 0) {
         return [];
-    &#125;
+    }
     var temp = [];
     temp.push(arr[0]);
-    for (var i = 1 ; i &lt; arr.length ; i ++) &#123;
-        if (arr[i].num == temp[temp.length - 1].num &amp;&amp; (!temp[temp.length - 1].nextSquare || temp[temp.length - 1].nextSquare == null)) &#123;
+    for (var i = 1 ; i &lt; arr.length ; i ++) {
+        if (arr[i].num == temp[temp.length - 1].num &amp;&amp; (!temp[temp.length - 1].nextSquare || temp[temp.length - 1].nextSquare == null)) {
             temp[temp.length - 1].nextSquare = arr[i];
-        &#125; else &#123;
+        } else {
             temp.push(arr[i]);
-        &#125;
-    &#125;
+        }
+    }
     return temp;
-&#125;
+}
 
-function generateNullMap () &#123;
+function generateNullMap () {
     var newValueMap = [];
-    for (var i = 0 ; i &lt; rows ; i ++) &#123;
+    for (var i = 0 ; i &lt; rows ; i ++) {
         newValueMap[i] = [];
-        for (var j = 0 ; j &lt; cols ; j ++) &#123;
+        for (var j = 0 ; j &lt; cols ; j ++) {
             newValueMap[i][j] = null;
-        &#125;
-    &#125;
+        }
+    }
     return newValueMap;
-&#125;
+}
 
-function isOver() &#123;
-    for (var i = 0 ; i &lt; squareSet.length ; i ++) &#123;
-        for (var j = 0 ; j &lt; squareSet[i].length ; j ++) &#123;
-            if (squareSet[i][j] == null) &#123;
+function isOver() {
+    for (var i = 0 ; i &lt; squareSet.length ; i ++) {
+        for (var j = 0 ; j &lt; squareSet[i].length ; j ++) {
+            if (squareSet[i][j] == null) {
                 return false;
-            &#125;
-            if (squareSet[i][j + 1] &amp;&amp; squareSet[i][j].num == squareSet[i][j + 1].num || squareSet[i + 1] &amp;&amp; squareSet[i + 1][j] &amp;&amp; squareSet[i][j].num == squareSet[i + 1][j].num)&#123;
+            }
+            if (squareSet[i][j + 1] &amp;&amp; squareSet[i][j].num == squareSet[i][j + 1].num || squareSet[i + 1] &amp;&amp; squareSet[i + 1][j] &amp;&amp; squareSet[i][j].num == squareSet[i + 1][j].num){
                 return false;
-            &#125;
-        &#125;
-    &#125;
+            }
+        }
+    }
     return true;
-&#125;
+}
 
-function refresh(newSquareSet) &#123;//纠正位图，保证最终一致性
+function refresh(newSquareSet) {//纠正位图，保证最终一致性
     squareSet = generateNullMap();
     var newValueMap = generateNullMap();
-    for (var i = 0 ; i &lt; rows ; i ++) &#123;
-        for (var j = 0 ; j &lt; cols ; j ++) &#123;
+    for (var i = 0 ; i &lt; rows ; i ++) {
+        for (var j = 0 ; j &lt; cols ; j ++) {
             //新的存在则添加
-            if (newSquareSet[i][j]) &#123;
-                if (newSquareSet[i][j].nextSquare) &#123;
+            if (newSquareSet[i][j]) {
+                if (newSquareSet[i][j].nextSquare) {
                     var temp = createSquare(newSquareSet[i][j].num * 2, newSquareSet[i][j].offsetLeft, newSquareSet[i][j].offsetTop, i, j);
                     squareSet[i][j] = temp;
                     my2048.append(temp);
                     my2048.removeChild(newSquareSet[i][j].nextSquare);
                     my2048.removeChild(newSquareSet[i][j]);
-                &#125; else &#123;
+                } else {
                     var temp = createSquare(newSquareSet[i][j].num, newSquareSet[i][j].offsetLeft, newSquareSet[i][j].offsetTop, i, j);
                     squareSet[i][j] = temp;
                     my2048.append(temp);
                     my2048.removeChild(newSquareSet[i][j]);
-                &#125;
-                if (valueMap[i][j] != squareSet[i][j].num) &#123;
+                }
+                if (valueMap[i][j] != squareSet[i][j].num) {
                     isChange = true;
-                &#125;
+                }
                 newValueMap[i][j] = squareSet[i][j].num;
-            &#125; else &#123;
+            } else {
                 newValueMap[i][j] = 0;
-            &#125;
-        &#125;
-    &#125;
+            }
+        }
+    }
     valueMap = newValueMap;
-&#125;
+}
 
-function randSquareNum() &#123;
+function randSquareNum() {
     return Math.random() &gt;= 0.5 ? 4 : 2;
-&#125;
+}
 
-function randGenerateSquare() &#123;
-    for (;;) &#123;
+function randGenerateSquare() {
+    for (;;) {
         var randRow = Math.floor(Math.random() * rows);
         var randCol = Math.floor(Math.random() * cols);
-        if (valueMap[randRow][randCol] == 0) &#123;
+        if (valueMap[randRow][randCol] == 0) {
             var temp = createSquare(randSquareNum(), randCol * squareWidth + (randCol + 1) * spacing, randRow * squareWidth + (randRow + 1) * spacing, randRow, randCol);
             valueMap[temp.row][temp.col] = temp.num;
             squareSet[temp.row][temp.col] = temp;
             my2048.appendChild(temp);
             return true;
-        &#125;
-    &#125;
-&#125;
+        }
+    }
+}
 
-function createSquare(value, left, top, row, col) &#123;
-    var temp = document.createElement(&quot;div&quot;);
-    temp.style.width = squareWidth + &quot;px&quot;;
-    temp.style.height = squareWidth + &quot;px&quot;;
-    temp.style.left = left + &quot;px&quot;;
-    temp.style.top = top + &quot;px&quot;;
+function createSquare(value, left, top, row, col) {
+    var temp = document.createElement("div");
+    temp.style.width = squareWidth + "px";
+    temp.style.height = squareWidth + "px";
+    temp.style.left = left + "px";
+    temp.style.top = top + "px";
     temp.style.background = colorMapping[value];
-    temp.style.lineHeight = squareWidth + &quot;px&quot;;
-    temp.style.textAlign = &quot;center&quot;;
-    temp.style.fontSize = 0.4 * squareWidth + &quot;px&quot;;
+    temp.style.lineHeight = squareWidth + "px";
+    temp.style.textAlign = "center";
+    temp.style.fontSize = 0.4 * squareWidth + "px";
     temp.num = value;
     temp.row = row;
     temp.col = col;
-    if (value &gt; 0) &#123;
-        temp.innerHTML = &quot;&quot; + value;
-    &#125;
+    if (value &gt; 0) {
+        temp.innerHTML = "" + value;
+    }
     return temp;
-&#125;
+}
 
-function initBoard() &#123;
-    my2048 = document.getElementById(&quot;my2048&quot;);
-    my2048.style.width = cols * squareWidth + (cols + 1) * spacing + &quot;px&quot;;
-    my2048.style.height = rows * squareWidth + (rows + 1) * spacing + &quot;px&quot;;
-&#125;
+function initBoard() {
+    my2048 = document.getElementById("my2048");
+    my2048.style.width = cols * squareWidth + (cols + 1) * spacing + "px";
+    my2048.style.height = rows * squareWidth + (rows + 1) * spacing + "px";
+}
 
-function init() &#123;
+function init() {
     //初始化棋盘
     initBoard();
-    for (var i = 0 ; i &lt; rows ; i ++)&#123;
+    for (var i = 0 ; i &lt; rows ; i ++){
         boardSet[i] = [];
         valueMap[i] = [];
         squareSet[i] = [];
-        for (var j = 0 ; j &lt; cols ; j ++)&#123;
+        for (var j = 0 ; j &lt; cols ; j ++){
             valueMap[i][j] = 0;
             squareSet[i][j] = null;
             boardSet[i][j] = createSquare(0, j * squareWidth + (j + 1) * spacing, i * squareWidth + (i + 1) * spacing, i, j);
             my2048.appendChild(boardSet[i][j]);
-        &#125;
-    &#125;
+        }
+    }
     //初始化方块
     randGenerateSquare();
     randGenerateSquare();
     //添加事件
-    document.addEventListener(&quot;keydown&quot;, function(e) &#123;
+    document.addEventListener("keydown", function(e) {
         if (!lock) return;
         lock = false;
-        switch (e.key) &#123;
-            case &quot;ArrowUp&quot;: move(directionEnum.top);break;
-            case &quot;ArrowDown&quot;: move(directionEnum.down);break;
-            case &quot;ArrowLeft&quot;: move(directionEnum.left);break;
-            case &quot;ArrowRight&quot;: move(directionEnum.right);break;
-            default : &#123;
+        switch (e.key) {
+            case "ArrowUp": move(directionEnum.top);break;
+            case "ArrowDown": move(directionEnum.down);break;
+            case "ArrowLeft": move(directionEnum.left);break;
+            case "ArrowRight": move(directionEnum.right);break;
+            default : {
                 lock = true;
-            &#125;
-        &#125;
-    &#125;);
-&#125;
+            }
+        }
+    });
+}
 
-window.onload = function () &#123;
+window.onload = function () {
     init();
-&#125;
+}
 </code></pre>
 
                 
@@ -987,6 +1033,272 @@ window.onload = function () &#123;
     
 
     
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'btBQSR4Ys7g0Ylf7JyMOGMMU-MdYXbMMI',
+        appKey: '9lXj0nV75V86aeUPq4GrUxqh',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
 
     
 
@@ -1015,7 +1327,7 @@ window.onload = function () &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            微信小程序开发遇到的那些坑
                         
                     </div>
                     <div class="publish-info">
@@ -1064,7 +1376,7 @@ window.onload = function () &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用github存储图片
                         
                     </div>
                     <div class="publish-info">
@@ -1290,7 +1602,7 @@ window.onload = function () &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.4k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             

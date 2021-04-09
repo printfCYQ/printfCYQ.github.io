@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="文字时钟, gongchenghui,github">
+    <meta name="keywords" content="文字时钟, printfCYQ,github">
     <meta name="description" content="真不错">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
 
 
@@ -91,6 +93,28 @@
       <i class="fa fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-rocket" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
     </a>
     
   </li>
@@ -172,6 +196,28 @@
 			    <i class="fa-fw fa fa-archive"></i>
 			
 			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-address-book"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-rocket"></i>
+			
+			友链
 		</a>
           
         </li>
@@ -419,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-07
+                    2021-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    6 分
                 </div>
                 
 
@@ -460,40 +506,40 @@
             <div id="articleContent">
                 <p>Welcome to [Hexo]</p>
 <h1 id="JS-文字时钟"><a href="#JS-文字时钟" class="headerlink" title="JS-文字时钟"></a>JS-文字时钟</h1><h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;html lang="en"&gt;
 
 &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
     &lt;title&gt;Document&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;
+    &lt;link rel="stylesheet" href="index.css"&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;div id=&quot;clock&quot;&gt;&lt;/div&gt;
-    &lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+    &lt;div id="clock"&gt;&lt;/div&gt;
+    &lt;script src="index.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;
 </code></pre>
-<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>*&#123;
+<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>*{
     margin:0;
     padding:0;
-&#125;
-html,body&#123;
+}
+html,body{
     width:100%;
     height:100%;
     background-color: #000;
     overflow: hidden;
-&#125;
-#clock &#123;
+}
+#clock {
     position: relative;
     width: 100%;
     height: 100%;
     background: black;
-&#125;
-.label&#123;
+}
+.label{
     display:inline-block;
     color:#4d4d4d;
     text-align: center;
@@ -501,25 +547,25 @@ html,body&#123;
     font-size:19px;
     transition:left 1s,top 1s;
     transform-origin: 0% 0%;
-&#125;
+}
 
 </code></pre>
-<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><pre><code>var monthText = [&quot;一月&quot;, &quot;二月&quot;, &quot;三月&quot;, &quot;四月&quot;, &quot;五月&quot;, &quot;六月&quot;, &quot;七月&quot;, &quot;八月&quot;, &quot;九月&quot;, &quot;十月&quot;, &quot;十一月&quot;, &quot;十二月&quot;];
-var dayText = [&quot;一号&quot;, &quot;二号&quot;, &quot;三号&quot;, &quot;四号&quot;, &quot;五号&quot;, &quot;六号&quot;, &quot;七号&quot;, &quot;八号&quot;, &quot;九号&quot;, &quot;十号&quot;, &quot;十一号&quot;, &quot;十二号&quot;, &quot;十三号&quot;, &quot;十四号&quot;, &quot;十五号&quot;, &quot;十六号&quot;, &quot;十七号&quot;, &quot;十八号&quot;, &quot;十九号&quot;, &quot;二十号&quot;, &quot;二十一号&quot;, &quot;二十二号&quot;, &quot;二十三号&quot;, &quot;二十四号&quot;, &quot;二十五号&quot;, &quot;二十六号&quot;, &quot;二十七号&quot;, &quot;二十八号&quot;, &quot;二十九号&quot;, &quot;三十号&quot;, &quot;三十一号&quot;];
-var weekText = [&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;];
-var hourText = [&quot;零点&quot;, &quot;一点&quot;, &quot;两点&quot;, &quot;三点&quot;, &quot;四点&quot;, &quot;五点&quot;, &quot;六点&quot;, &quot;七点&quot;, &quot;八点&quot;, &quot;九点&quot;, &quot;十点&quot;, &quot;十一点&quot;, &quot;十二点&quot;, &quot;十三点&quot;, &quot;十四点&quot;, &quot;十五点&quot;, &quot;十六点&quot;, &quot;十七点&quot;, &quot;十八点&quot;, &quot;十九点&quot;, &quot;二十点&quot;, &quot;二十一点&quot;, &quot;二十二点&quot;, &quot;二十三点&quot;];
-var minuteText = [&quot;一分&quot;, &quot;二分&quot;, &quot;三分&quot;, &quot;四分&quot;, &quot;五分&quot;, &quot;六分&quot;, &quot;七分&quot;, &quot;八分&quot;, &quot;九分&quot;, &quot;十分&quot;,
-    &quot;十一分&quot;, &quot;十二分&quot;, &quot;十三分&quot;, &quot;十四分&quot;, &quot;十五分&quot;, &quot;十六分&quot;, &quot;十七分&quot;, &quot;十八分&quot;, &quot;十九分&quot;, &quot;二十分&quot;,
-    &quot;二十一分&quot;, &quot;二十二分&quot;, &quot;二十三分&quot;, &quot;二十四分&quot;, &quot;二十五分&quot;, &quot;二十六分&quot;, &quot;二十七分&quot;, &quot;二十八分&quot;, &quot;二十九分&quot;, &quot;三十分&quot;,
-    &quot;三十一分&quot;, &quot;三十二分&quot;, &quot;三十三分&quot;, &quot;三十四分&quot;, &quot;三十五分&quot;, &quot;三十六分&quot;, &quot;三十七分&quot;, &quot;三十八分&quot;, &quot;三十九分&quot;, &quot;四十分&quot;,
-    &quot;四十一分&quot;, &quot;四十二分&quot;, &quot;四十三分&quot;, &quot;四十四分&quot;, &quot;四十五分&quot;, &quot;四十六分&quot;, &quot;四十七分&quot;, &quot;四十八分&quot;, &quot;四十九分&quot;, &quot;五十分&quot;,
-    &quot;五十一分&quot;, &quot;五十二分&quot;, &quot;五十三分&quot;, &quot;五十四分&quot;, &quot;五十五分&quot;, &quot;五十六分&quot;, &quot;五十七分&quot;, &quot;五十八分&quot;, &quot;五十九分&quot;, &quot;六十分&quot;];
-var secondsText = [&quot;一秒&quot;, &quot;二秒&quot;, &quot;三秒&quot;, &quot;四秒&quot;, &quot;五秒&quot;, &quot;六秒&quot;, &quot;七秒&quot;, &quot;八秒&quot;, &quot;九秒&quot;, &quot;十秒&quot;,
-    &quot;十一秒&quot;, &quot;十二秒&quot;, &quot;十三秒&quot;, &quot;十四秒&quot;, &quot;十五秒&quot;, &quot;十六秒&quot;, &quot;十七秒&quot;, &quot;十八秒&quot;, &quot;十九秒&quot;, &quot;二十秒&quot;,
-    &quot;二十一秒&quot;, &quot;二十二秒&quot;, &quot;二十三秒&quot;, &quot;二十四秒&quot;, &quot;二十五秒&quot;, &quot;二十六秒&quot;, &quot;二十七秒&quot;, &quot;二十八秒&quot;, &quot;二十九秒&quot;, &quot;三十秒&quot;,
-    &quot;三十一秒&quot;, &quot;三十二秒&quot;, &quot;三十三秒&quot;, &quot;三十四秒&quot;, &quot;三十五秒&quot;, &quot;三十六秒&quot;, &quot;三十七秒&quot;, &quot;三十八秒&quot;, &quot;三十九秒&quot;, &quot;四十秒&quot;,
-    &quot;四十一秒&quot;, &quot;四十二秒&quot;, &quot;四十三秒&quot;, &quot;四十四秒&quot;, &quot;四十五秒&quot;, &quot;四十六秒&quot;, &quot;四十七秒&quot;, &quot;四十八秒&quot;, &quot;四十九秒&quot;, &quot;五十秒&quot;,
-    &quot;五十一秒&quot;, &quot;五十二秒&quot;, &quot;五十三秒&quot;, &quot;五十四秒&quot;, &quot;五十五秒&quot;, &quot;五十六秒&quot;, &quot;五十七秒&quot;, &quot;五十八秒&quot;, &quot;五十九秒&quot;, &quot;六十秒&quot;];
+<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><pre><code>var monthText = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+var dayText = ["一号", "二号", "三号", "四号", "五号", "六号", "七号", "八号", "九号", "十号", "十一号", "十二号", "十三号", "十四号", "十五号", "十六号", "十七号", "十八号", "十九号", "二十号", "二十一号", "二十二号", "二十三号", "二十四号", "二十五号", "二十六号", "二十七号", "二十八号", "二十九号", "三十号", "三十一号"];
+var weekText = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+var hourText = ["零点", "一点", "两点", "三点", "四点", "五点", "六点", "七点", "八点", "九点", "十点", "十一点", "十二点", "十三点", "十四点", "十五点", "十六点", "十七点", "十八点", "十九点", "二十点", "二十一点", "二十二点", "二十三点"];
+var minuteText = ["一分", "二分", "三分", "四分", "五分", "六分", "七分", "八分", "九分", "十分",
+    "十一分", "十二分", "十三分", "十四分", "十五分", "十六分", "十七分", "十八分", "十九分", "二十分",
+    "二十一分", "二十二分", "二十三分", "二十四分", "二十五分", "二十六分", "二十七分", "二十八分", "二十九分", "三十分",
+    "三十一分", "三十二分", "三十三分", "三十四分", "三十五分", "三十六分", "三十七分", "三十八分", "三十九分", "四十分",
+    "四十一分", "四十二分", "四十三分", "四十四分", "四十五分", "四十六分", "四十七分", "四十八分", "四十九分", "五十分",
+    "五十一分", "五十二分", "五十三分", "五十四分", "五十五分", "五十六分", "五十七分", "五十八分", "五十九分", "六十分"];
+var secondsText = ["一秒", "二秒", "三秒", "四秒", "五秒", "六秒", "七秒", "八秒", "九秒", "十秒",
+    "十一秒", "十二秒", "十三秒", "十四秒", "十五秒", "十六秒", "十七秒", "十八秒", "十九秒", "二十秒",
+    "二十一秒", "二十二秒", "二十三秒", "二十四秒", "二十五秒", "二十六秒", "二十七秒", "二十八秒", "二十九秒", "三十秒",
+    "三十一秒", "三十二秒", "三十三秒", "三十四秒", "三十五秒", "三十六秒", "三十七秒", "三十八秒", "三十九秒", "四十秒",
+    "四十一秒", "四十二秒", "四十三秒", "四十四秒", "四十五秒", "四十六秒", "四十七秒", "四十八秒", "四十九秒", "五十秒",
+    "五十一秒", "五十二秒", "五十三秒", "五十四秒", "五十五秒", "五十六秒", "五十七秒", "五十八秒", "五十九秒", "六十秒"];
 
 var clock;
 // 存放dom元素的数组   
@@ -543,44 +589,44 @@ var textSet = [
     [secondsText, secondsList]
 ];
 
-window.onload = function () &#123;
+window.onload = function () {
     init();
     // 每隔100ms获得 当前时间 更新页面时间显示
-    setInterval(function () &#123;
+    setInterval(function () {
         runTime();
-    &#125;, 100);
+    }, 100);
 
     // 在变成圆形之前先进性修改定位
     changePosition();
     // 延迟2000ms变成圆形
-    setTimeout(function () &#123;
+    setTimeout(function () {
         changeCircle();
-    &#125;, 2000);
-&#125;
+    }, 2000);
+}
 // 初始化函数
-function init() &#123;
-    clock = document.getElementById(&#39;clock&#39;);
+function init() {
+    clock = document.getElementById('clock');
     // 生成标签 存放文字展示
-    for (var i = 0; i &lt; textSet.length; i++) &#123;
-        for (var j = 0; j &lt; textSet[i][0].length; j++) &#123;
+    for (var i = 0; i &lt; textSet.length; i++) {
+        for (var j = 0; j &lt; textSet[i][0].length; j++) {
             var temp = createLabel(textSet[i][0][j]);
             clock.appendChild(temp);
             // 将生成的标签存放在数组list中
             textSet[i][1].push(temp);
-        &#125;
-    &#125;
+        }
+    }
 
-&#125;
+}
 
 // 创建标签并将文字填充标签内 接收参数为文字内容  
-function createLabel(text) &#123;
-    var div = document.createElement(&#39;div&#39;);
-    div.classList.add(&#39;label&#39;);
+function createLabel(text) {
+    var div = document.createElement('div');
+    div.classList.add('label');
     div.innerText = text;
     return div;
-&#125;
+}
 
-function runTime() &#123;
+function runTime() {
     // 利用时间对象获得 当前 时间
     var now = new Date();
     // 获得月 日期 小时 分钟 秒钟
@@ -597,19 +643,19 @@ function runTime() &#123;
     // 设置当前时间为白色
     // 将当前时间月份存放在数组中
     var nowValue = [month, day - 1, week, hour, minute, seconds];
-    for (var i = 0; i &lt; nowValue.length; i++) &#123;
+    for (var i = 0; i &lt; nowValue.length; i++) {
         var num = nowValue[i];
-        textSet[i][1][num].style.color = &#39;#fff&#39;;
-    &#125;
+        textSet[i][1][num].style.color = '#fff';
+    }
 
     // 变成圆形
-    if (isCircle) &#123;
+    if (isCircle) {
         // 确定圆心
         var widthMid = document.body.clientWidth / 2;
         var heightMid = document.body.clientHeight / 2;
         // 将每一个dom元素确定到圆的位置
-        for (var i = 0; i &lt; textSet.length; i++) &#123;
-            for (var j = 0; j &lt; textSet[i][0].length; j++) &#123;
+        for (var i = 0; i &lt; textSet.length; i++) {
+            for (var j = 0; j &lt; textSet[i][0].length; j++) {
                 // 加算出每一个元素的位置  x y 坐标
                 // 每一个圆的半径与时分秒的位置有关
                 var r = (i + 1) * 35 + 50 * i;
@@ -620,51 +666,51 @@ function runTime() &#123;
                 var y = heightMid - r*Math.cos(deg * Math.PI / 180);
                 // 设置样式
                 var temp =  textSet[i][1][j];
-                temp.style.transform = &#39;rotate(&#39; + (-90 + deg ) + &#39;deg)&#39;;
-                temp.style.left = x + &#39;px&#39;;
-                temp.style.top = y + &#39;px&#39;;
-            &#125;
-        &#125;
-    &#125;
-&#125;
+                temp.style.transform = 'rotate(' + (-90 + deg ) + 'deg)';
+                temp.style.left = x + 'px';
+                temp.style.top = y + 'px';
+            }
+        }
+    }
+}
 
-function initStyle() &#123;
+function initStyle() {
     // 将所有标签置为灰色 
     // 利用取出dom元素
-    var label = document.getElementsByClassName(&#39;label&#39;);
-    for (var i = 0; i &lt; label.length; i++) &#123;
-        label[i].style.color = &#39;#4d4d4d&#39;;
-    &#125;
+    var label = document.getElementsByClassName('label');
+    for (var i = 0; i &lt; label.length; i++) {
+        label[i].style.color = '#4d4d4d';
+    }
     // 利用二维数组存放dom元素的数组
-    // for (var i = 0 ; i &lt; textSet.length ; i ++) &#123;
-    //     for (var j = 0 ; j &lt; textSet[i][0].length ; j ++) &#123;
-    //         textSet[i][1][j].style.color = &quot;#4d4d4d&quot;;
-    //     &#125;
-    // &#125;
-&#125;
+    // for (var i = 0 ; i &lt; textSet.length ; i ++) {
+    //     for (var j = 0 ; j &lt; textSet[i][0].length ; j ++) {
+    //         textSet[i][1][j].style.color = "#4d4d4d";
+    //     }
+    // }
+}
 
 // 修改position
-function changePosition() &#123;
-    for (let i = 0; i &lt; textSet.length; i++) &#123;
-        for (let j = 0; j &lt; textSet[i][1].length; j++) &#123;
+function changePosition() {
+    for (let i = 0; i &lt; textSet.length; i++) {
+        for (let j = 0; j &lt; textSet[i][1].length; j++) {
             // 先获得原来的位置  再修改position 设置left top 
-            let tempX = textSet[i][1][j].offsetLeft + &quot;px&quot;;
-            let tempY = textSet[i][1][j].offsetTop + &quot;px&quot;;
+            let tempX = textSet[i][1][j].offsetLeft + "px";
+            let tempY = textSet[i][1][j].offsetTop + "px";
             // console.log(textSet[i][1][j]);
             // 利用let 防止闭包
-            setTimeout(function () &#123;
-                textSet[i][1][j].style.position = &quot;absolute&quot;;
+            setTimeout(function () {
+                textSet[i][1][j].style.position = "absolute";
                 textSet[i][1][j].style.left = tempX;
                 textSet[i][1][j].style.top = tempY;
-            &#125;, 50);
-        &#125;
-    &#125;
-&#125;
+            }, 50);
+        }
+    }
+}
 
-function changeCircle() &#123;
+function changeCircle() {
     isCircle = true;
-    clock.style.transform = &quot;rotate(90deg)&quot;;
-&#125;
+    clock.style.transform = "rotate(90deg)";
+}
 </code></pre>
 
                 
@@ -891,6 +937,272 @@ function changeCircle() &#123;
     
 
     
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'btBQSR4Ys7g0Ylf7JyMOGMMU-MdYXbMMI',
+        appKey: '9lXj0nV75V86aeUPq4GrUxqh',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
 
     
 
@@ -919,7 +1231,7 @@ function changeCircle() &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用github存储图片
                         
                     </div>
                     <div class="publish-info">
@@ -968,7 +1280,7 @@ function changeCircle() &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用七牛云存储文件
                         
                     </div>
                     <div class="publish-info">
@@ -1194,7 +1506,7 @@ function changeCircle() &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.4k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             

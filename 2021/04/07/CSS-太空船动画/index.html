@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="实现太空船动画, gongchenghui,github">
+    <meta name="keywords" content="实现太空船动画, printfCYQ,github">
     <meta name="description" content="真不错">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
 
 
@@ -91,6 +93,28 @@
       <i class="fa fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-rocket" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
     </a>
     
   </li>
@@ -172,6 +196,28 @@
 			    <i class="fa-fw fa fa-archive"></i>
 			
 			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-address-book"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-rocket"></i>
+			
+			友链
 		</a>
           
         </li>
@@ -419,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-07
+                    2021-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    11 分
                 </div>
                 
 
@@ -460,47 +506,47 @@
             <div id="articleContent">
                 <p>Welcome to [Hexo]</p>
 <h1 id="CSS-实现太空船动画"><a href="#CSS-实现太空船动画" class="headerlink" title="CSS-实现太空船动画"></a>CSS-实现太空船动画</h1><h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
     &lt;title&gt;Document&lt;/title&gt;
-   &lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;
+   &lt;link rel="stylesheet" href="index.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div class=&quot;spaceship&quot;&gt;
-        &lt;div class=&quot;spaceshipBody&quot;&gt;
-           &lt;div class=&quot;spaceshipTop&quot;&gt;&lt;/div&gt;
-           &lt;div class=&quot;spaceshipWindows&quot;&gt;
+    &lt;div class="spaceship"&gt;
+        &lt;div class="spaceshipBody"&gt;
+           &lt;div class="spaceshipTop"&gt;&lt;/div&gt;
+           &lt;div class="spaceshipWindows"&gt;
               &lt;span&gt;&lt;/span&gt;
               &lt;span&gt;&lt;/span&gt;
            &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;spaceshipBottom&quot;&gt;
+        &lt;div class="spaceshipBottom"&gt;
            &lt;span&gt;&lt;/span&gt;
            &lt;span&gt;&lt;/span&gt;
            &lt;span&gt;&lt;/span&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;fire&quot;&gt;
+        &lt;div class="fire"&gt;
            &lt;span&gt;&lt;/span&gt;
            &lt;span&gt;&lt;/span&gt;
            &lt;span&gt;&lt;/span&gt;
-           &lt;div class=&quot;glow&quot;&gt;&lt;/div&gt;
+           &lt;div class="glow"&gt;&lt;/div&gt;
         &lt;/div&gt;
      &lt;/div&gt;
-     &lt;div class=&quot;shadow&quot;&gt;&lt;/div&gt;
-     &lt;div class=&quot;buttons&quot;&gt;
-        &lt;button class=&quot;btnStart&quot;&gt;&lt;span&gt;start&lt;/span&gt;&lt;/button&gt;
-        &lt;button class=&quot;btnLaunch&quot;&gt;&lt;span&gt;launch&lt;/span&gt;&lt;/button&gt;
-        &lt;button disabled=&quot;disabled&quot; class=&quot;btnLand disable&quot;&gt;&lt;span&gt;land&lt;/span&gt;&lt;/button&gt;
+     &lt;div class="shadow"&gt;&lt;/div&gt;
+     &lt;div class="buttons"&gt;
+        &lt;button class="btnStart"&gt;&lt;span&gt;start&lt;/span&gt;&lt;/button&gt;
+        &lt;button class="btnLaunch"&gt;&lt;span&gt;launch&lt;/span&gt;&lt;/button&gt;
+        &lt;button disabled="disabled" class="btnLand disable"&gt;&lt;span&gt;land&lt;/span&gt;&lt;/button&gt;
      &lt;/div&gt;
        
 &lt;/body&gt;
-&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;
+&lt;script src="index.js"&gt;&lt;/script&gt;
 &lt;/html&gt;
 </code></pre>
-<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>body &#123;
+<h2 id="index-css"><a href="#index-css" class="headerlink" title="index.css"></a>index.css</h2><pre><code>body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -509,9 +555,9 @@
     height: 100vh;
     width: 100%;
     background-color: #0f1b31;
-  &#125;
+  }
   
-  .spaceship &#123;
+  .spaceship {
     width: 300px;
     height: 300px;
     display: flex;
@@ -521,57 +567,57 @@
     transition: all 2s ease;
     bottom: 130px;
     animation: float 2s ease infinite alternate;
-  &#125;
-  @keyframes float &#123;
-    0% &#123;
+  }
+  @keyframes float {
+    0% {
       transform: translateY(10px);
-    &#125;
-    100% &#123;
+    }
+    100% {
       transform: translateY(0px);
-    &#125;
-  &#125;
-  .spaceship.launch &#123;
+    }
+  }
+  .spaceship.launch {
     bottom: 120%;
     animation: launch 3s ease;
-  &#125;
-  @keyframes launch &#123;
-    0% &#123;
+  }
+  @keyframes launch {
+    0% {
       bottom: 130px;
       transform: translatex(2px);
-    &#125;
-    10% &#123;
+    }
+    10% {
       transform: translatex(-2px);
-    &#125;
-    20% &#123;
+    }
+    20% {
       transform: translatex(2px);
-    &#125;
-    30% &#123;
+    }
+    30% {
       transform: translatex(-2px);
-    &#125;
-    60% &#123;
+    }
+    60% {
       transform: translatex(0px);
       bottom: 150px;
-    &#125;
-    100% &#123;
+    }
+    100% {
       bottom: 120%;
-    &#125;
-  &#125;
-  .spaceship.land &#123;
+    }
+  }
+  .spaceship.land {
     bottom: 130px;
     animation: land 3s ease;
-  &#125;
-  @keyframes land &#123;
-    0% &#123;
+  }
+  @keyframes land {
+    0% {
       bottom: 120%;
-    &#125;
-    50% &#123;
+    }
+    50% {
       bottom: 180px;
-    &#125;
-    100% &#123;
+    }
+    100% {
       bottom: 130px;
-    &#125;
-  &#125;
-  .spaceship .spaceshipBody &#123;
+    }
+  }
+  .spaceship .spaceshipBody {
     width: 35%;
     height: 80%;
     background-color: white;
@@ -584,9 +630,9 @@
     position: relative;
     z-index: 1;
     box-shadow: inset 0px -173px 0px -80px white, inset 0px -213px 0px -60px #e4e4e4;
-  &#125;
-  .spaceship .spaceshipBody:before &#123;
-    content: &quot;&quot;;
+  }
+  .spaceship .spaceshipBody:before {
+    content: "";
     position: absolute;
     width: calc(100% - 36px);
     height: 42%;
@@ -596,9 +642,9 @@
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     box-shadow: inset 0px -33px 0px 0px rgba(0, 0, 0, 0.1);
-  &#125;
-  .spaceship .spaceshipBody:after &#123;
-    content: &quot;&quot;;
+  }
+  .spaceship .spaceshipBody:after {
+    content: "";
     position: absolute;
     width: 45%;
     height: 40px;
@@ -608,17 +654,17 @@
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     z-index: -1;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipTop &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipTop {
     width: 100%;
     height: 240px;
     border-radius: 100%;
     overflow: hidden;
     position: relative;
     box-shadow: inset -12px 17px 0px -7px rgba(0, 0, 0, 0.15);
-  &#125;
-  .spaceship .spaceshipBody .spaceshipTop:before &#123;
-    content: &quot;&quot;;
+  }
+  .spaceship .spaceshipBody .spaceshipTop:before {
+    content: "";
     background-color: #4ba3b7;
     position: absolute;
     width: 100%;
@@ -628,16 +674,16 @@
     top: -55px;
     border: 2px solid white;
     box-shadow: inset -18px 56px 0px 3px rgba(0, 0, 0, 0.1), 0px 0px 0px 6px #f95959;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 300px;
     height: 300px;
     position: absolute;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span {
     background-color: #ace7ef;
     box-shadow: inset -4px 4px 0px 0px rgba(0, 0, 0, 0.3), inset 0px 0px 0px 2px white;
     border: 4px solid #f95959;
@@ -645,91 +691,91 @@
     position: absolute;
     border-radius: 100%;
     overflow: hidden;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span:before &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span:before {
     position: absolute;
-    content: &quot;&quot;;
+    content: "";
     background-color: white;
     width: 200%;
     height: 100%;
     transform: rotate(45deg);
     opacity: 0.4;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(1) &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(1) {
     width: 30px;
     height: 30px;
     top: 23%;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(1):before &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(1):before {
     top: 10px;
     right: 0px;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(2) &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(2) {
     width: 45px;
     height: 45px;
     top: 40%;
-  &#125;
-  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(2):before &#123;
+  }
+  .spaceship .spaceshipBody .spaceshipWindows span:nth-child(2):before {
     top: 12px;
     right: 0px;
-  &#125;
-  .spaceship .spaceshipBottom &#123;
+  }
+  .spaceship .spaceshipBottom {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 300px;
     height: 300px;
     position: absolute;
-  &#125;
-  .spaceship .spaceshipBottom span &#123;
+  }
+  .spaceship .spaceshipBottom span {
     background-color: #4ba3b7;
     border-radius: 10px;
     position: absolute;
     overflow: hidden;
-  &#125;
-  .spaceship .spaceshipBottom span:before &#123;
-    content: &quot;&quot;;
+  }
+  .spaceship .spaceshipBottom span:before {
+    content: "";
     position: absolute;
     background-color: white;
     width: 2px;
     height: 120%;
     border-radius: 20px;
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(1) &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(1) {
     width: 15px;
     height: 80px;
     z-index: 2;
     bottom: 2%;
     box-shadow: inset -5px -3px 0px 0px rgba(0, 0, 0, 0.18);
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(1):before &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(1):before {
     display: none;
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(2) &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(2) {
     width: 50px;
     height: 130px;
     left: 32%;
     bottom: 6%;
     transform: perspective(10em) rotateX(60deg) translateZ(-1px);
     box-shadow: inset -5px -3px 0px 0px rgba(0, 0, 0, 0.2);
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(2):before &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(2):before {
     left: 0px;
     border-right: 2px solid #f95959;
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(3) &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(3) {
     width: 50px;
     height: 130px;
     right: 32%;
     bottom: 6%;
     transform: perspective(10em) rotateX(60deg) translateZ(-1px);
     box-shadow: inset -5px -3px 0px 0px rgba(0, 0, 0, 0.2);
-  &#125;
-  .spaceship .spaceshipBottom span:nth-child(3):before &#123;
+  }
+  .spaceship .spaceshipBottom span:nth-child(3):before {
     right: 0px;
     border-left: 2px solid #f95959;
-  &#125;
-  .spaceship .fire &#123;
+  }
+  .spaceship .fire {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -737,26 +783,26 @@
     height: 100px;
     position: absolute;
     bottom: -50px;
-  &#125;
-  .spaceship .fire.burn span &#123;
+  }
+  .spaceship .fire.burn span {
     border-radius: 50px;
     top: 0;
     position: absolute;
     background-color: #ffd460;
     height: inherit;
     animation: fire 0.8s ease infinite alternate;
-  &#125;
-  .spaceship .fire.burn span:nth-child(1) &#123;
+  }
+  .spaceship .fire.burn span:nth-child(1) {
     width: 6px;
     height: 40px;
     left: 44%;
     transform: translateY(27px);
     box-shadow: inset 0px -7px 10px #ea5455, inset 0px -19px 10px #ffc175, 0px -7px 10px #ea5455;
     animation-delay: 0.2s;
-  &#125;
-  .spaceship .fire.burn span:nth-child(1):after &#123;
+  }
+  .spaceship .fire.burn span:nth-child(1):after {
     position: absolute;
-    content: &quot;&quot;;
+    content: "";
     width: 4px;
     height: 60%;
     border-radius: 50px;
@@ -764,17 +810,17 @@
     bottom: 0;
     transform: translate(8px, 15px);
     box-shadow: inset 0px -5px 10px #ea5455, inset 0px -19px 10px #ffc175, 0px -7px 10px #ea5455;
-  &#125;
-  .spaceship .fire.burn span:nth-child(2) &#123;
+  }
+  .spaceship .fire.burn span:nth-child(2) {
     width: 10px;
     height: 60px;
     left: calc(50% - 8px);
     transform: translateY(35px);
     box-shadow: inset 0px -10px 10px #ea5455, inset 0px -30px 10px #ffc175, 0px -7px 10px #ea5455;
-  &#125;
-  .spaceship .fire.burn span:nth-child(2):after &#123;
+  }
+  .spaceship .fire.burn span:nth-child(2):after {
     position: absolute;
-    content: &quot;&quot;;
+    content: "";
     width: 10px;
     height: 100%;
     border-radius: 10px;
@@ -782,18 +828,18 @@
     top: 0;
     transform: translate(-6px, -25px);
     box-shadow: inset 0px -5px 10px #ea5455, inset 0px -15px 10px #ffc175, 0px -7px 10px #ea5455;
-  &#125;
-  .spaceship .fire.burn span:nth-child(3) &#123;
+  }
+  .spaceship .fire.burn span:nth-child(3) {
     width: 10px;
     height: 40px;
     right: 45%;
     transform: translateY(27px);
     box-shadow: inset 0px -5px 10px #ea5455, inset 0px -30px 10px #ffc175, 0px -7px 10px #ea5455;
     animation-delay: 0.4s;
-  &#125;
-  .spaceship .fire.burn span:nth-child(3):after &#123;
+  }
+  .spaceship .fire.burn span:nth-child(3):after {
     position: absolute;
-    content: &quot;&quot;;
+    content: "";
     width: 6px;
     height: 180%;
     border-radius: 10px;
@@ -801,21 +847,21 @@
     top: 0;
     transform: translate(-6px, -15px);
     box-shadow: inset 0px -5px 10px #ea5455, inset 0px -20px 10px #ffc175, 0px -7px 10px #ea5455;
-  &#125;
-  @keyframes fire &#123;
-    0% &#123;
+  }
+  @keyframes fire {
+    0% {
       height: 10px;
       bottom: 0;
-    &#125;
-      50% &#123;
+    }
+      50% {
         top: 0;
-      &#125;
-      100% &#123;
+      }
+      100% {
         height: 20px;
         bottom: 0;
-      &#125;
-    &#125;
-  .spaceship .fire.burn .glow &#123;
+      }
+    }
+  .spaceship .fire.burn .glow {
     position: absolute;
     width: 0px;
     height: 0px;
@@ -823,16 +869,16 @@
     box-shadow: 0px 0px 50px 20px #ea5455;
     opacity: 1;
     animation: glow 0.8s ease infinite alternate;
-  &#125;
-  @keyframes glow &#123;
-    0% &#123;
+  }
+  @keyframes glow {
+    0% {
       box-shadow: 0px 0px 50px 20px #ea5455;
-    &#125;
-    100% &#123;
+    }
+    100% {
       box-shadow: 0px 0px 50px 25px #ea5455;
-    &#125;
-  &#125;
-  .shadow &#123;
+    }
+  }
+  .shadow {
     width: 150px;
     height: 30px;
     background-color: black;
@@ -843,24 +889,24 @@
     z-index: -1;
     animation: shadow 2s ease infinite alternate;
     transition: all 0.5s ease;
-  &#125;
-  @keyframes shadow &#123;
-    0% &#123;
+  }
+  @keyframes shadow {
+    0% {
       width: 150px;
-    &#125;
-    100% &#123;
+    }
+    100% {
       width: 120px;
-    &#125;
-  &#125;
-  .buttons &#123;
+    }
+  }
+  .buttons {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     top: 20px;
     left: 20px;
-  &#125;
-  .buttons button &#123;
+  }
+  .buttons button {
     width: 100px;
     height: 40px;
     background-color: #4ba3b7;
@@ -876,38 +922,38 @@
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 3px;
-  &#125;
-  .buttons button.active &#123;
+  }
+  .buttons button.active {
     background-color: #f95959;
-  &#125;
-  .buttons button.active:hover &#123;
+  }
+  .buttons button.active:hover {
     letter-spacing: 1px;
     color: white;
     background-color: #bf4c4c;
-  &#125;
-  .buttons button.active:hover:before, .buttons button.active:hover:after &#123;
+  }
+  .buttons button.active:hover:before, .buttons button.active:hover:after {
     width: 0;
-  &#125;
-  .buttons button.active:hover span:before, .buttons button.active:hover span:after &#123;
+  }
+  .buttons button.active:hover span:before, .buttons button.active:hover span:after {
     height: 0;
-  &#125;
-  .buttons button.disable &#123;
+  }
+  .buttons button.disable {
     background-color: grey;
     opacity: 0.3;
     cursor: auto;
-  &#125;
-  .buttons button.disable:hover &#123;
+  }
+  .buttons button.disable:hover {
     letter-spacing: 1px;
     color: white;
-  &#125;
-  .buttons button.disable:hover:before, .buttons button.disable:hover:after &#123;
+  }
+  .buttons button.disable:hover:before, .buttons button.disable:hover:after {
     width: 0;
-  &#125;
-  .buttons button.disable:hover span:before, .buttons button.disable:hover span:after &#123;
+  }
+  .buttons button.disable:hover span:before, .buttons button.disable:hover span:after {
     height: 0;
-  &#125;
-  .buttons button:before &#123;
-    content: &quot;&quot;;
+  }
+  .buttons button:before {
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
@@ -915,9 +961,9 @@
     transition: all 0.4s ease;
     left: 0;
     top: 0;
-  &#125;
-  .buttons button:after &#123;
-    content: &quot;&quot;;
+  }
+  .buttons button:after {
+    content: "";
     position: absolute;
     width: 0;
     height: 2px;
@@ -925,8 +971,8 @@
     transition: all 0.4s 0.2s ease;
     right: 0;
     bottom: 0;
-  &#125;
-  .buttons button span &#123;
+  }
+  .buttons button span {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -935,9 +981,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  &#125;
-  .buttons button span:before &#123;
-    content: &quot;&quot;;
+  }
+  .buttons button span:before {
+    content: "";
     position: absolute;
     width: 2px;
     height: 0;
@@ -945,9 +991,9 @@
     transition: all 0.4s 0.3s ease;
     left: 0;
     top: 0;
-  &#125;
-  .buttons button span:after &#123;
-    content: &quot;&quot;;
+  }
+  .buttons button span:after {
+    content: "";
     position: absolute;
     width: 2px;
     height: 0;
@@ -955,105 +1001,105 @@
     transition: all 0.4s 0.4s ease;
     right: 0;
     bottom: 0;
-  &#125;
-  .buttons button:hover &#123;
+  }
+  .buttons button:hover {
     color: #ace7ef;
     letter-spacing: 2px;
-  &#125;
-  .buttons button:hover:before, .buttons button:hover:after &#123;
+  }
+  .buttons button:hover:before, .buttons button:hover:after {
     width: 100%;
-  &#125;
-  .buttons button:hover span:before, .buttons button:hover span:after &#123;
+  }
+  .buttons button:hover span:before, .buttons button:hover span:after {
     height: 100%;
-  &#125;
-  .buttons button:active &#123;
+  }
+  .buttons button:active {
     outline: none;
     border: none;
-  &#125;
-  .buttons button:focus &#123;
+  }
+  .buttons button:focus {
     outline: 0;
-  &#125;
+  }
   
 </code></pre>
-<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><pre><code>var spaceship = document.querySelector(&quot;.spaceship&quot;),
-    fire = document.querySelector(&quot;.fire&quot;),
-    btnLaunch = document.querySelector(&quot;.btnLaunch&quot;),
-    btnLand = document.querySelector(&quot;.btnLand&quot;),
-    btnStart = document.querySelector(&quot;.btnStart&quot;),
-    txtLaunch = document.querySelector(&quot;.btnLaunch span&quot;),
-    txtLand = document.querySelector(&quot;.btnLand span&quot;),
-    txtStart = document.querySelector(&quot;.btnStart span&quot;),
-    shadow = document.querySelector(&quot;.shadow&quot;);
+<h2 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h2><pre><code>var spaceship = document.querySelector(".spaceship"),
+    fire = document.querySelector(".fire"),
+    btnLaunch = document.querySelector(".btnLaunch"),
+    btnLand = document.querySelector(".btnLand"),
+    btnStart = document.querySelector(".btnStart"),
+    txtLaunch = document.querySelector(".btnLaunch span"),
+    txtLand = document.querySelector(".btnLand span"),
+    txtStart = document.querySelector(".btnStart span"),
+    shadow = document.querySelector(".shadow");
 
-btnLaunch.addEventListener(&quot;click&quot;, launch);
-btnLand.addEventListener(&quot;click&quot;, land);
-btnStart.addEventListener(&quot;click&quot;, start);
+btnLaunch.addEventListener("click", launch);
+btnLand.addEventListener("click", land);
+btnStart.addEventListener("click", start);
 
-function launch() &#123;
-   btnStart.classList.add(&quot;disable&quot;);
-   fire.classList.add(&quot;burn&quot;);
-   spaceship.classList.remove(&quot;land&quot;);
-   spaceship.classList.add(&quot;launch&quot;);
-   spaceship.removeEventListener(&quot;animationend&quot;, burn);
-   shadow.style.opacity = &quot;0&quot;;
+function launch() {
+   btnStart.classList.add("disable");
+   fire.classList.add("burn");
+   spaceship.classList.remove("land");
+   spaceship.classList.add("launch");
+   spaceship.removeEventListener("animationend", burn);
+   shadow.style.opacity = "0";
 
    /*buttons*/
-   btnLaunch.classList.add(&quot;active&quot;);
+   btnLaunch.classList.add("active");
    btnStart.disabled = true;
-   btnStart.classList.remove(&quot;active&quot;);
-   btnLand.classList.remove(&quot;active&quot;);
-   btnLand.classList.remove(&quot;disable&quot;);
+   btnStart.classList.remove("active");
+   btnLand.classList.remove("active");
+   btnLand.classList.remove("disable");
    btnLand.disabled = false;
 
    /*text buttons*/
-   txtLaunch.innerText = &quot;launched!&quot;;
-   txtStart.innerText = &quot;start&quot;;
-   txtLand.innerText = &quot;land&quot;;
-&#125;
+   txtLaunch.innerText = "launched!";
+   txtStart.innerText = "start";
+   txtLand.innerText = "land";
+}
 
-function land() &#123;
-   spaceship.classList.remove(&quot;launch&quot;);
-   spaceship.classList.add(&quot;land&quot;);
-   spaceship.addEventListener(&quot;animationend&quot;, burn);
+function land() {
+   spaceship.classList.remove("launch");
+   spaceship.classList.add("land");
+   spaceship.addEventListener("animationend", burn);
   
    /*buttons*/
-   btnLaunch.classList.remove(&quot;active&quot;);
-   btnLand.classList.add(&quot;active&quot;);
-   btnStart.classList.remove(&quot;disable&quot;);
+   btnLaunch.classList.remove("active");
+   btnLand.classList.add("active");
+   btnStart.classList.remove("disable");
    btnStart.disabled = false;
    /*text buttons*/
-   txtLand.innerText = &quot;landed!&quot;;
-   txtLaunch.innerText = &quot;launch&quot;;
-&#125;
+   txtLand.innerText = "landed!";
+   txtLaunch.innerText = "launch";
+}
 
-function burn() &#123;
-   fire.classList.remove(&quot;burn&quot;);
-   spaceship.classList.remove(&quot;land&quot;);
-   shadow.style.opacity = &quot;0.2&quot;;
+function burn() {
+   fire.classList.remove("burn");
+   spaceship.classList.remove("land");
+   shadow.style.opacity = "0.2";
    /*buttons*/
-   btnLand.classList.remove(&quot;active&quot;);
-   btnLand.classList.add(&quot;disable&quot;);
+   btnLand.classList.remove("active");
+   btnLand.classList.add("disable");
    btnLand.disabled = true;
    /*text buttons*/
-   txtLand.innerText = &quot;land&quot;;
-&#125;
+   txtLand.innerText = "land";
+}
 
-function start() &#123;
-   if (btnStart.classList.contains(&quot;active&quot;)) &#123;
-      fire.classList.remove(&quot;burn&quot;);
-      btnStart.classList.remove(&quot;active&quot;);
-      txtStart.innerText = &quot;start&quot;;
-   &#125; else &#123;
-      fire.classList.add(&quot;burn&quot;);
-      btnStart.classList.add(&quot;active&quot;);
-      txtStart.innerText = &quot;stop&quot;;
-      btnLand.classList.remove(&quot;active&quot;);
-   &#125;
-&#125;
+function start() {
+   if (btnStart.classList.contains("active")) {
+      fire.classList.remove("burn");
+      btnStart.classList.remove("active");
+      txtStart.innerText = "start";
+   } else {
+      fire.classList.add("burn");
+      btnStart.classList.add("active");
+      txtStart.innerText = "stop";
+      btnLand.classList.remove("active");
+   }
+}
 
-function stop() &#123;
-   fire.classList.remove(&quot;burn&quot;);
-&#125;
+function stop() {
+   fire.classList.remove("burn");
+}
 </code></pre>
 
                 
@@ -1280,6 +1326,272 @@ function stop() &#123;
     
 
     
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'btBQSR4Ys7g0Ylf7JyMOGMMU-MdYXbMMI',
+        appKey: '9lXj0nV75V86aeUPq4GrUxqh',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
 
     
 
@@ -1330,12 +1642,12 @@ function stop() &#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
                     <a href="/tags/img/">
                         <span class="chip bg-color">img</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1361,7 +1673,7 @@ function stop() &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Hello World
                         
                     </div>
                     <div class="publish-info">
@@ -1587,7 +1899,7 @@ function stop() &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.4k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             

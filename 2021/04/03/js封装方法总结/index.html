@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="JS封装方法总结, gongchenghui,github">
+    <meta name="keywords" content="JS封装方法总结, printfCYQ,github">
     <meta name="description" content="真不错">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
 
 
@@ -91,6 +93,28 @@
       <i class="fa fa-archive" style="zoom: 0.6;"></i>
       
       <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fa fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>留言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fa fa-rocket" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
     </a>
     
   </li>
@@ -172,6 +196,28 @@
 			    <i class="fa-fw fa fa-archive"></i>
 			
 			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-address-book"></i>
+			
+			留言
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-rocket"></i>
+			
+			友链
 		</a>
           
         </li>
@@ -419,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-07
+                    2021-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    9 分
                 </div>
                 
 
@@ -459,276 +505,276 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Welcome to [Hexo]</p>
-<h1 id="JS封装方法总结"><a href="#JS封装方法总结" class="headerlink" title="JS封装方法总结"></a>JS封装方法总结</h1><h2 id="求滚动条滚动距离"><a href="#求滚动条滚动距离" class="headerlink" title="求滚动条滚动距离"></a>求滚动条滚动距离</h2><pre><code>function getScrollOffset() &#123;
-    if (window.pageXOffset) &#123;
-        return &#123;
+<h1 id="JS封装方法总结"><a href="#JS封装方法总结" class="headerlink" title="JS封装方法总结"></a>JS封装方法总结</h1><h2 id="求滚动条滚动距离"><a href="#求滚动条滚动距离" class="headerlink" title="求滚动条滚动距离"></a>求滚动条滚动距离</h2><pre><code>function getScrollOffset() {
+    if (window.pageXOffset) {
+        return {
             x: window.pageXOffset,
             y: window.pageYOffset
-        &#125;
-    &#125; else &#123;
-        return &#123;
+        }
+    } else {
+        return {
             x: document.body.scrollLeft + document.documentElement.scrollLeft,
             y: document.body.scrollTop + document.documentElement.scrollTop
-        &#125;
-    &#125;
-&#125;
+        }
+    }
+}
 </code></pre>
-<h2 id="返回浏览器视口尺寸"><a href="#返回浏览器视口尺寸" class="headerlink" title="返回浏览器视口尺寸"></a>返回浏览器视口尺寸</h2><pre><code>function getViewportOffset() &#123;
-    if (window.innerWidth) &#123;
-        return &#123;
+<h2 id="返回浏览器视口尺寸"><a href="#返回浏览器视口尺寸" class="headerlink" title="返回浏览器视口尺寸"></a>返回浏览器视口尺寸</h2><pre><code>function getViewportOffset() {
+    if (window.innerWidth) {
+        return {
             w: window.innerWidth,
             h: window.innerHeight
-        &#125;
-    &#125; else &#123;
-        if (document.compatMode === &quot;BackCompat&quot;) &#123;
-            return &#123;
+        }
+    } else {
+        if (document.compatMode === "BackCompat") {
+            return {
                 w: document.body.clientWidth,
                 h: document.body.clientHeight
-            &#125;
-        &#125; else &#123;
-            return &#123;
+            }
+        } else {
+            return {
                 w: document.documentElement.clientWidth,
                 h: document.documentElement.clientHeight
-            &#125;
-        &#125;
-    &#125;
-&#125;
+            }
+        }
+    }
+}
 </code></pre>
-<h2 id="获取元素样式-兼容"><a href="#获取元素样式-兼容" class="headerlink" title="获取元素样式(兼容)"></a>获取元素样式(兼容)</h2><pre><code>function getStyle(elem, prop) &#123;
-    if (window.getComputedStyle) &#123;
+<h2 id="获取元素样式-兼容"><a href="#获取元素样式-兼容" class="headerlink" title="获取元素样式(兼容)"></a>获取元素样式(兼容)</h2><pre><code>function getStyle(elem, prop) {
+    if (window.getComputedStyle) {
         return window.getComputedStyle(elem, null)[prop];
-    &#125; else &#123;
+    } else {
         return elem.currentStyle[prop];
-    &#125;
-&#125;
+    }
+}
 </code></pre>
-<h2 id="给一个dom对象添加该事件类型的函数（兼容）"><a href="#给一个dom对象添加该事件类型的函数（兼容）" class="headerlink" title="给一个dom对象添加该事件类型的函数（兼容）"></a>给一个dom对象添加该事件类型的函数（兼容）</h2><pre><code>function addEvent(elem, type, handle) &#123;
-    if (elem.addEventListener) &#123;
+<h2 id="给一个dom对象添加该事件类型的函数（兼容）"><a href="#给一个dom对象添加该事件类型的函数（兼容）" class="headerlink" title="给一个dom对象添加该事件类型的函数（兼容）"></a>给一个dom对象添加该事件类型的函数（兼容）</h2><pre><code>function addEvent(elem, type, handle) {
+    if (elem.addEventListener) {
         elem.addEventListener(type, handle, false);
-    &#125; else if (elem.attachEvent) &#123;
-        elem.attachEvent(&#39;on&#39; + type, function () &#123;
+    } else if (elem.attachEvent) {
+        elem.attachEvent('on' + type, function () {
             handle.call(elem);
-        &#125;)
-    &#125; else &#123;
-        elem[&#39;on&#39; + type] = handle;
-    &#125;
-&#125;
+        })
+    } else {
+        elem['on' + type] = handle;
+    }
+}
 </code></pre>
-<h2 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h2><pre><code>function removeEvent(elem, type, handle) &#123;
-    if (typeof elem.removeEventListener !== &#39;undefined&#39;) &#123;
+<h2 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h2><pre><code>function removeEvent(elem, type, handle) {
+    if (typeof elem.removeEventListener !== 'undefined') {
         elem.removeEventListener(type, handle, false);
-    &#125; else if (typeof elem.detachEvent !== &#39;undefined&#39;) &#123;
-        elem.detachEvent(&#39;on&#39; + type);
-    &#125;
-&#125;
+    } else if (typeof elem.detachEvent !== 'undefined') {
+        elem.detachEvent('on' + type);
+    }
+}
 </code></pre>
-<h2 id="取消冒泡（兼容）"><a href="#取消冒泡（兼容）" class="headerlink" title="取消冒泡（兼容）"></a>取消冒泡（兼容）</h2><pre><code>function stopBubble(event) &#123;
-    if (event.stopPropagation) &#123;
+<h2 id="取消冒泡（兼容）"><a href="#取消冒泡（兼容）" class="headerlink" title="取消冒泡（兼容）"></a>取消冒泡（兼容）</h2><pre><code>function stopBubble(event) {
+    if (event.stopPropagation) {
         event.stopPropagation();
-    &#125; else &#123;
+    } else {
         event.cancelBubble = true;
-    &#125;
-&#125;
+    }
+}
 </code></pre>
-<h2 id="阻止默认事件函数"><a href="#阻止默认事件函数" class="headerlink" title="阻止默认事件函数"></a>阻止默认事件函数</h2><pre><code>function cancelHandler(event) &#123;
-    if (event.preventDefault) &#123;
+<h2 id="阻止默认事件函数"><a href="#阻止默认事件函数" class="headerlink" title="阻止默认事件函数"></a>阻止默认事件函数</h2><pre><code>function cancelHandler(event) {
+    if (event.preventDefault) {
         event.preventDefault();
-    &#125; else &#123;
+    } else {
         event.returnValue = false;
-    &#125;
-&#125;
+    }
+}
 </code></pre>
-<h2 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h2><pre><code>function drag(elem) &#123;
+<h2 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h2><pre><code>function drag(elem) {
     var disX,
         disY;
-    addEvent(elem, &#39;mousedown&#39;, function (e) &#123;
+    addEvent(elem, 'mousedown', function (e) {
         var event = e || window.event;
-        disX = event.clientX - parseInt(getStyle(elem, &#39;left&#39;));
-        disY = event.clientY - parseInt(getStyle(elem, &#39;top&#39;));
-        addEvent(document, &#39;mousemove&#39;, mouseMove);
-        addEvent(document, &#39;mouseup&#39;, mouseUp);
+        disX = event.clientX - parseInt(getStyle(elem, 'left'));
+        disY = event.clientY - parseInt(getStyle(elem, 'top'));
+        addEvent(document, 'mousemove', mouseMove);
+        addEvent(document, 'mouseup', mouseUp);
         stopBubble(event);
         cancelHandler(event);
-    &#125;);
-    function mouseMove(e) &#123;
+    });
+    function mouseMove(e) {
         var event = e || window.event;
-        elem.style.left = event.clientX - disX + &quot;px&quot;;
-        elem.style.top = event.clientY - disY + &quot;px&quot;;
-    &#125;
-    function mouseUp(e) &#123;
+        elem.style.left = event.clientX - disX + "px";
+        elem.style.top = event.clientY - disY + "px";
+    }
+    function mouseUp(e) {
         var event = e || window.event;
-        removeEvent(document, &#39;mousemove&#39;, mouseMove);
-        removeEvent(document, &#39;mouseup&#39;, mouseUp);
-    &#125;
-&#125;
+        removeEvent(document, 'mousemove', mouseMove);
+        removeEvent(document, 'mouseup', mouseUp);
+    }
+}
 </code></pre>
-<h2 id="异步加载（兼容）"><a href="#异步加载（兼容）" class="headerlink" title="异步加载（兼容）"></a>异步加载（兼容）</h2><pre><code>function loadScript(url, callback) &#123;
-    var script = document.createElement(&#39;script&#39;);
-    script.type = &quot;text/javascript&quot;;
-    if (script.readyState) &#123;
-        script.onreadstatechange = function () &#123;//IE
-            if (script.readyState == &quot;complete&quot; || script.readyStatereadyState == &quot;loaded&quot;) &#123;
+<h2 id="异步加载（兼容）"><a href="#异步加载（兼容）" class="headerlink" title="异步加载（兼容）"></a>异步加载（兼容）</h2><pre><code>function loadScript(url, callback) {
+    var script = document.createElement('script');
+    script.type = "text/javascript";
+    if (script.readyState) {
+        script.onreadstatechange = function () {//IE
+            if (script.readyState == "complete" || script.readyStatereadyState == "loaded") {
                 callback();
-            &#125;
-        &#125;
-    &#125; else &#123;
-        script.onload = function () &#123;
+            }
+        }
+    } else {
+        script.onload = function () {
             callback();
-        &#125;
-    &#125;
+        }
+    }
     script.src = url;
     document.head.appendChild(script);
-&#125;
-loadScript(&#39;/*路径*/&#39;, function () &#123;
+}
+loadScript('/*路径*/', function () {
     test();
-&#125;)
+})
 </code></pre>
 <h2 id="获取指定标签对象"><a href="#获取指定标签对象" class="headerlink" title="获取指定标签对象"></a>获取指定标签对象</h2><pre><code>/**
  * 获取指定标签对象
  * @param id 标签的id属性值
- * @returns &#123;Element&#125;根据id属性值返回指定标签对象
+ * @returns {Element}根据id属性值返回指定标签对象
  */
-function my$(id) &#123;
+function my$(id) {
     return document.getElementById(id);
-&#125;
+}
 </code></pre>
-<h2 id="设置任意的标签中间的任意文本内容"><a href="#设置任意的标签中间的任意文本内容" class="headerlink" title="设置任意的标签中间的任意文本内容"></a>设置任意的标签中间的任意文本内容</h2><pre><code>function setInnerText(element, text) &#123;
+<h2 id="设置任意的标签中间的任意文本内容"><a href="#设置任意的标签中间的任意文本内容" class="headerlink" title="设置任意的标签中间的任意文本内容"></a>设置任意的标签中间的任意文本内容</h2><pre><code>function setInnerText(element, text) {
     //判断浏览器是否支持这个属性
-    if (typeof element.textContent == &quot;undefined&quot;) &#123;//不支持
+    if (typeof element.textContent == "undefined") {//不支持
         element.innerText = text;
-    &#125; else &#123;//支持这个属性
+    } else {//支持这个属性
         element.textContent = text;
-    &#125;
-&#125;
-my$(&quot;btn&quot;).onclick = function () &#123;
-    console.log(getInnerText(my$(&quot;dv&quot;)));
-&#125;;
+    }
+}
+my$("btn").onclick = function () {
+    console.log(getInnerText(my$("dv")));
+};
 </code></pre>
-<h2 id="获取任意标签中间的文本内容"><a href="#获取任意标签中间的文本内容" class="headerlink" title="获取任意标签中间的文本内容"></a>获取任意标签中间的文本内容</h2><pre><code>function getInnerText(element) &#123;
-    if (typeof element.textContent == &quot;undefined&quot;) &#123;
+<h2 id="获取任意标签中间的文本内容"><a href="#获取任意标签中间的文本内容" class="headerlink" title="获取任意标签中间的文本内容"></a>获取任意标签中间的文本内容</h2><pre><code>function getInnerText(element) {
+    if (typeof element.textContent == "undefined") {
         return element.innerText;
-    &#125; else &#123;
+    } else {
         return element.textContent;
-    &#125;
-&#125;
-my$(&quot;btn&quot;).onclick = function () &#123;
-    setInnerText(my$(&quot;dv&quot;), &quot;哈哈,我又变帅了&quot;);
-&#125;;
+    }
+}
+my$("btn").onclick = function () {
+    setInnerText(my$("dv"), "哈哈,我又变帅了");
+};
 </code></pre>
-<h2 id="获取任意一个父级元素的第一个子级元素"><a href="#获取任意一个父级元素的第一个子级元素" class="headerlink" title="获取任意一个父级元素的第一个子级元素"></a>获取任意一个父级元素的第一个子级元素</h2><pre><code>function getFirstElementChild(element) &#123;
-    if (element.firstElementChild) &#123;//true---&gt;支持
+<h2 id="获取任意一个父级元素的第一个子级元素"><a href="#获取任意一个父级元素的第一个子级元素" class="headerlink" title="获取任意一个父级元素的第一个子级元素"></a>获取任意一个父级元素的第一个子级元素</h2><pre><code>function getFirstElementChild(element) {
+    if (element.firstElementChild) {//true---&gt;支持
         return element.firstElementChild;
-    &#125; else &#123;
+    } else {
         var node = element.firstChild;//第一个节点
-        while (node &amp;&amp; node.nodeType != 1) &#123;
+        while (node &amp;&amp; node.nodeType != 1) {
             node = node.nextSibling;
-        &#125;
+        }
         return node;
-    &#125;
-&#125;
-console.log(getFirstElementChild(my$(&quot;uu&quot;)).innerText);
+    }
+}
+console.log(getFirstElementChild(my$("uu")).innerText);
 </code></pre>
-<h2 id="获取任意一个父级元素的最后一个子级元素"><a href="#获取任意一个父级元素的最后一个子级元素" class="headerlink" title="获取任意一个父级元素的最后一个子级元素"></a>获取任意一个父级元素的最后一个子级元素</h2><pre><code>function getLastElementChild(element) &#123;
-    if (element.lastElementChild) &#123;//true---&gt;支持
+<h2 id="获取任意一个父级元素的最后一个子级元素"><a href="#获取任意一个父级元素的最后一个子级元素" class="headerlink" title="获取任意一个父级元素的最后一个子级元素"></a>获取任意一个父级元素的最后一个子级元素</h2><pre><code>function getLastElementChild(element) {
+    if (element.lastElementChild) {//true---&gt;支持
         return element.lastElementChild;
-    &#125; else &#123;
+    } else {
         var node = element.lastChild;//第一个节点
-        while (node &amp;&amp; node.nodeType != 1) &#123;
+        while (node &amp;&amp; node.nodeType != 1) {
             node = node.previousSibling;
-        &#125;
+        }
         return node;
-    &#125;
-&#125;
-console.log(getLastElementChild(my$(&quot;uu&quot;)).innerText);
+    }
+}
+console.log(getLastElementChild(my$("uu")).innerText);
 </code></pre>
 <h2 id="获取某个元素的前一个兄弟元素"><a href="#获取某个元素的前一个兄弟元素" class="headerlink" title="获取某个元素的前一个兄弟元素"></a>获取某个元素的前一个兄弟元素</h2><pre><code>/**
  * 获取某个元素的前一个兄弟元素
  * @param element 某个元素
- * @returns &#123;*&#125; 前一个兄弟元素
+ * @returns {*} 前一个兄弟元素
  */
-function getPreviousElement(element) &#123;
-    if (element.previousElementSibling) &#123;
+function getPreviousElement(element) {
+    if (element.previousElementSibling) {
         return element.previousElementSibling
-    &#125; else &#123;
+    } else {
         var node = element.previousSibling;
-        while (node &amp;&amp; node.nodeType != 1) &#123;
+        while (node &amp;&amp; node.nodeType != 1) {
             node = node.previousSibling;
-        &#125;
+        }
         return node;
-    &#125;
-&#125;
+    }
+}
 </code></pre>
 <h2 id="获取某个元素的后一个兄弟元素"><a href="#获取某个元素的后一个兄弟元素" class="headerlink" title="获取某个元素的后一个兄弟元素"></a>获取某个元素的后一个兄弟元素</h2><pre><code>/**
  * 获取某个元素的后一个兄弟元素
  * @param element 某个元素
- * @returns &#123;*&#125; 后一个兄弟元素
+ * @returns {*} 后一个兄弟元素
  */
-function getNextElement(element) &#123;
-    if (element.nextElementSibling) &#123;
+function getNextElement(element) {
+    if (element.nextElementSibling) {
         return element.nextElementSibling
-    &#125; else &#123;
+    } else {
         var node = element.nextSibling;
-        while (node &amp;&amp; node.nodeType != 1) &#123;
+        while (node &amp;&amp; node.nodeType != 1) {
             node = node.nextSibling;
-        &#125;
+        }
         return node;
-    &#125;
-&#125;
+    }
+}
 </code></pre>
 <h2 id="获取某个元素的所有兄弟元素"><a href="#获取某个元素的所有兄弟元素" class="headerlink" title="获取某个元素的所有兄弟元素"></a>获取某个元素的所有兄弟元素</h2><pre><code>/**
  * 获取某个元素的所有兄弟元素
  * @param element 某个元素
- * @returns &#123;Array&#125; 兄弟元素
+ * @returns {Array} 兄弟元素
  */
-function getSiblings(element) &#123;
+function getSiblings(element) {
     if (!element) return;
     var elements = [];
     var ele = element.previousSibling;
-    while (ele) &#123;
-        if (ele.nodeType === 1) &#123;
+    while (ele) {
+        if (ele.nodeType === 1) {
             elements.push(ele);
-        &#125;
+        }
         ele = ele.previousSibling;
-    &#125;
+    }
     ele = element.nextSibling;
-    while (ele) &#123;
-        if (ele.nodeType === 1) &#123;
+    while (ele) {
+        if (ele.nodeType === 1) {
             elements.push(ele);
 
-        &#125;
+        }
         ele = ele.nextSibling;
-    &#125;
+    }
     return elements;
-&#125;
+}
 </code></pre>
-<h2 id="为任意元素-绑定任意的事件-任意的元素-事件的类型-事件处理函数"><a href="#为任意元素-绑定任意的事件-任意的元素-事件的类型-事件处理函数" class="headerlink" title="为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数"></a>为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数</h2><pre><code>function addEventListener(element, type, fn) &#123;
+<h2 id="为任意元素-绑定任意的事件-任意的元素-事件的类型-事件处理函数"><a href="#为任意元素-绑定任意的事件-任意的元素-事件的类型-事件处理函数" class="headerlink" title="为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数"></a>为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数</h2><pre><code>function addEventListener(element, type, fn) {
     //判断浏览器是否支持这个方法
-    if (element.addEventListener) &#123;
+    if (element.addEventListener) {
         element.addEventListener(type, fn, false);
-    &#125; else if (element.attachEvent) &#123;
-        element.attachEvent(&quot;on&quot; + type, fn);
-    &#125; else &#123;
-        element[&quot;on&quot; + type] = fn;
-    &#125;
-&#125;
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + type, fn);
+    } else {
+        element["on" + type] = fn;
+    }
+}
 </code></pre>
-<h2 id="为任意的一个元素-解绑对应的事件"><a href="#为任意的一个元素-解绑对应的事件" class="headerlink" title="为任意的一个元素,解绑对应的事件"></a>为任意的一个元素,解绑对应的事件</h2><pre><code>function removeEventListener(element, type, fnName) &#123;
-    if (element.removeEventListener) &#123;
+<h2 id="为任意的一个元素-解绑对应的事件"><a href="#为任意的一个元素-解绑对应的事件" class="headerlink" title="为任意的一个元素,解绑对应的事件"></a>为任意的一个元素,解绑对应的事件</h2><pre><code>function removeEventListener(element, type, fnName) {
+    if (element.removeEventListener) {
         element.removeEventListener(type, fnName, false);
-    &#125; else if (element.detachEvent) &#123;
-        element.detachEvent(&quot;on&quot; + type, fnName);
-    &#125; else &#123;
-        element[&quot;on&quot; + type] = null;
-    &#125;
-&#125;
+    } else if (element.detachEvent) {
+        element.detachEvent("on" + type, fnName);
+    } else {
+        element["on" + type] = null;
+    }
+}
 </code></pre>
 <h2 id="格式化日期"><a href="#格式化日期" class="headerlink" title="格式化日期"></a>格式化日期</h2><pre><code>/**
  * 格式化日期
  * @param dt 日期对象
- * @returns &#123;string&#125; 返回值是格式化的字符串日期
+ * @returns {string} 返回值是格式化的字符串日期
  */
-function getDates(dt) &#123;
-    var str = &quot;&quot;;//存储时间的字符串
+function getDates(dt) {
+    var str = "";//存储时间的字符串
     //获取年
     var year = dt.getFullYear();
     //获取月
@@ -741,37 +787,37 @@ function getDates(dt) &#123;
     var min = dt.getMinutes();
     //获取秒
     var sec = dt.getSeconds();
-    month = month &lt; 10 ? &quot;0&quot; + month : month;
-    day = day &lt; 10 ? &quot;0&quot; + day : day;
-    hour = hour &lt; 10 ? &quot;0&quot; + hour : hour;
-    min = min &lt; 10 ? &quot;0&quot; + min : min;
-    sec = sec &lt; 10 ? &quot;0&quot; + sec : sec;
-    str = year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日 &quot; + hour + &quot;:&quot; + min + &quot;:&quot; + sec;
+    month = month &lt; 10 ? "0" + month : month;
+    day = day &lt; 10 ? "0" + day : day;
+    hour = hour &lt; 10 ? "0" + hour : hour;
+    min = min &lt; 10 ? "0" + min : min;
+    sec = sec &lt; 10 ? "0" + sec : sec;
+    str = year + "年" + month + "月" + day + "日 " + hour + ":" + min + ":" + sec;
     return str;
-&#125;
+}
 </code></pre>
-<h2 id="返回当前浏览器是什么类型的浏览器"><a href="#返回当前浏览器是什么类型的浏览器" class="headerlink" title="返回当前浏览器是什么类型的浏览器"></a>返回当前浏览器是什么类型的浏览器</h2><pre><code>function userBrowser() &#123;
+<h2 id="返回当前浏览器是什么类型的浏览器"><a href="#返回当前浏览器是什么类型的浏览器" class="headerlink" title="返回当前浏览器是什么类型的浏览器"></a>返回当前浏览器是什么类型的浏览器</h2><pre><code>function userBrowser() {
     var browserName = navigator.userAgent.toLowerCase();
-    if (/msie/i.test(browserName) &amp;&amp; !/opera/.test(browserName)) &#123;
-        console.log(&quot;IE&quot;);
-    &#125; else if (/firefox/i.test(browserName)) &#123;
-        console.log(&quot;Firefox&quot;);
-    &#125; else if (/chrome/i.test(browserName) &amp;&amp; /webkit/i.test(browserName) &amp;&amp; /mozilla/i.test(browserName)) &#123;
-        console.log(&quot;Chrome&quot;);
-    &#125; else if (/opera/i.test(browserName)) &#123;
-        console.log(&quot;Opera&quot;);
-    &#125; else if (/webkit/i.test(browserName) &amp;&amp; !(/chrome/i.test(browserName) &amp;&amp; /webkit/i.test(browserName) &amp;&amp; /mozilla/i.test(browserName))) &#123;
-        console.log(&quot;Safari&quot;);
-    &#125; else &#123;
-        console.log(&quot;不知道什么鬼!&quot;);
-    &#125;
-&#125;
+    if (/msie/i.test(browserName) &amp;&amp; !/opera/.test(browserName)) {
+        console.log("IE");
+    } else if (/firefox/i.test(browserName)) {
+        console.log("Firefox");
+    } else if (/chrome/i.test(browserName) &amp;&amp; /webkit/i.test(browserName) &amp;&amp; /mozilla/i.test(browserName)) {
+        console.log("Chrome");
+    } else if (/opera/i.test(browserName)) {
+        console.log("Opera");
+    } else if (/webkit/i.test(browserName) &amp;&amp; !(/chrome/i.test(browserName) &amp;&amp; /webkit/i.test(browserName) &amp;&amp; /mozilla/i.test(browserName))) {
+        console.log("Safari");
+    } else {
+        console.log("不知道什么鬼!");
+    }
+}
 </code></pre>
-<h2 id="动画函数—任意一个元素移动到指定的目标位置"><a href="#动画函数—任意一个元素移动到指定的目标位置" class="headerlink" title="动画函数—任意一个元素移动到指定的目标位置"></a>动画函数—任意一个元素移动到指定的目标位置</h2><pre><code>function animate(element, target) &#123;
+<h2 id="动画函数—任意一个元素移动到指定的目标位置"><a href="#动画函数—任意一个元素移动到指定的目标位置" class="headerlink" title="动画函数—任意一个元素移动到指定的目标位置"></a>动画函数—任意一个元素移动到指定的目标位置</h2><pre><code>function animate(element, target) {
     //先清理定时器
     clearInterval(element.timeId);
     //一会要清理定时器(只产生一个定时器)
-    element.timeId = setInterval(function () &#123;
+    element.timeId = setInterval(function () {
         //获取div的当前的位置
         var current = element.offsetLeft;//数字类型,没有px
         //div每次移动多少像素---步数
@@ -780,78 +826,78 @@ function getDates(dt) &#123;
         //每次移动后的距离
         current += step;
         //判断当前移动后的位置是否到达目标位置
-        if (Math.abs(target - current) &gt; Math.abs(step)) &#123;
-            element.style.left = current + &quot;px&quot;;
-        &#125; else &#123;
+        if (Math.abs(target - current) &gt; Math.abs(step)) {
+            element.style.left = current + "px";
+        } else {
             //清理定时器
             clearInterval(element.timeId);
-            element.style.left = target + &quot;px&quot;;
-        &#125;
-    &#125;, 20);
-&#125;
-my$(&quot;btn2&quot;).onclick = function () &#123;
-    animate(my$(&quot;dv&quot;), 800);
-&#125;;
+            element.style.left = target + "px";
+        }
+    }, 20);
+}
+my$("btn2").onclick = function () {
+    animate(my$("dv"), 800);
+};
 </code></pre>
-<h2 id="变速动画-任意一个元素移动到指定的目标位置"><a href="#变速动画-任意一个元素移动到指定的目标位置" class="headerlink" title="变速动画-任意一个元素移动到指定的目标位置"></a>变速动画-任意一个元素移动到指定的目标位置</h2><pre><code>function animateChange(element, target) &#123;
+<h2 id="变速动画-任意一个元素移动到指定的目标位置"><a href="#变速动画-任意一个元素移动到指定的目标位置" class="headerlink" title="变速动画-任意一个元素移动到指定的目标位置"></a>变速动画-任意一个元素移动到指定的目标位置</h2><pre><code>function animateChange(element, target) {
     //清理定时器
     clearInterval(element.timeId);
-    element.timeId = setInterval(function () &#123;
+    element.timeId = setInterval(function () {
       //获取元素的当前位置
       var current = element.offsetLeft;
       //移动的步数
       var step = (target-current)/10;
       step = step&gt;0?Math.ceil(step):Math.floor(step);
       current += step;
-      element.style.left = current + &quot;px&quot;;
-      if(current==target) &#123;
+      element.style.left = current + "px";
+      if(current==target) {
         //清理定时器
         clearInterval(element.timeId);
-      &#125;
+      }
       //测试代码:
-      console.log(&quot;目标位置:&quot;+target+&quot;,当前位置:&quot;+current+&quot;,每次移动步数:&quot;+step);
-    &#125;, 20);
-  &#125;
-  my$(&quot;btn2&quot;).onclick = function () &#123;
-    animateChange(my$(&quot;dv&quot;), 800);
-&#125;;
+      console.log("目标位置:"+target+",当前位置:"+current+",每次移动步数:"+step);
+    }, 20);
+  }
+  my$("btn2").onclick = function () {
+    animateChange(my$("dv"), 800);
+};
 </code></pre>
-<h2 id="foreach的兼容代码"><a href="#foreach的兼容代码" class="headerlink" title="foreach的兼容代码"></a>foreach的兼容代码</h2><pre><code>if (!Array.prototype.forEach) &#123;
+<h2 id="foreach的兼容代码"><a href="#foreach的兼容代码" class="headerlink" title="foreach的兼容代码"></a>foreach的兼容代码</h2><pre><code>if (!Array.prototype.forEach) {
 
-    Array.prototype.forEach = function (callback, thisArg) &#123;
+    Array.prototype.forEach = function (callback, thisArg) {
 
         var T, k;
 
-        if (this == null) &#123;
-            throw new TypeError(&#39; this is null or not defined&#39;);
-        &#125;
+        if (this == null) {
+            throw new TypeError(' this is null or not defined');
+        }
 
         // 1. Let O be the result of calling toObject() passing the
         // |this| value as the argument.
         var O = Object(this);
 
         // 2. Let lenValue be the result of calling the Get() internal
-        // method of O with the argument &quot;length&quot;.
+        // method of O with the argument "length".
         // 3. Let len be toUint32(lenValue).
         var len = O.length &gt;&gt;&gt; 0;
 
         // 4. If isCallable(callback) is false, throw a TypeError exception. 
         // See: http://es5.github.com/#x9.11
-        if (typeof callback !== &quot;function&quot;) &#123;
-            throw new TypeError(callback + &#39; is not a function&#39;);
-        &#125;
+        if (typeof callback !== "function") {
+            throw new TypeError(callback + ' is not a function');
+        }
 
         // 5. If thisArg was supplied, let T be thisArg; else let
         // T be undefined.
-        if (arguments.length &gt; 1) &#123;
+        if (arguments.length &gt; 1) {
             T = thisArg;
-        &#125;
+        }
 
         // 6. Let k be 0
         k = 0;
 
         // 7. Repeat, while k &lt; len
-        while (k &lt; len) &#123;
+        while (k &lt; len) {
 
             var kValue;
 
@@ -861,7 +907,7 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
             //    internal method of O with argument Pk.
             //    This step can be combined with c
             // c. If kPresent is true, then
-            if (k in O) &#123;
+            if (k in O) {
 
                 // i. Let kValue be the result of calling the Get internal
                 // method of O with argument Pk.
@@ -870,13 +916,13 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
                 // ii. Call the Call internal method of callback with T as
                 // the this value and argument list containing kValue, k, and O.
                 callback.call(T, kValue, k, O);
-            &#125;
+            }
             // d. Increase k by 1.
             k++;
-        &#125;
+        }
         // 8. return undefined
-    &#125;;
-&#125;
+    };
+}
 </code></pre>
 
                 
@@ -1103,6 +1149,272 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
     
 
     
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'btBQSR4Ys7g0Ylf7JyMOGMMU-MdYXbMMI',
+        appKey: '9lXj0nV75V86aeUPq4GrUxqh',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
 
     
 
@@ -1131,7 +1443,7 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用七牛云存储文件
                         
                     </div>
                     <div class="publish-info">
@@ -1180,7 +1492,7 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            端口占用
                         
                     </div>
                     <div class="publish-info">
@@ -1406,7 +1718,7 @@ my$(&quot;btn2&quot;).onclick = function () &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.4k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             
