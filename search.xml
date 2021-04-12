@@ -8,7 +8,7 @@
       <link href="2021/04/07/photo/"/>
       <url>2021/04/07/photo/</url>
       
-        <content type="html"><![CDATA[<p><img src="/.io//array.png" alt="这是代替图片的文字，随便写"><br><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="array.png" alt="这是代替图片的文字，随便写"><br><img src="array.png" alt="这是代替图片的文字，随便写"><br><span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>]]></content>
       
       
       <categories>
@@ -156,31 +156,6 @@
     
     
     <entry>
-      <title>使用七牛云存储文件</title>
-      <link href="2021/04/04/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6/"/>
-      <url>2021/04/04/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><p><b>需求：</b>在本地写作时，把图片直接传到图片服务器，复制图片URL到本地的markdown文档——发布时只需要将文本内容传到博客即可。访问博客时，博客服务器也只需要加载文本内容，图片内容由图片服务器负责加载。</p><p>之前使用Github进行存储，使用过程发现Github经常不能访问，所以使用七牛云进行存储。</p><h4 id="1-注册七牛云账号"><a href="#1-注册七牛云账号" class="headerlink" title="1.注册七牛云账号"></a>1.注册七牛云账号</h4><hr><p><a target="_blank" href="https://www.qiniu.com/">七牛云</a><br>实名认证即可获得<code>10GB</code>存储空间，对于博客已经很够用。</p><h4 id="2-创建空间"><a href="#2-创建空间" class="headerlink" title="2. 创建空间"></a>2. 创建空间</h4><hr><p>登录，到主页后点击对象存储-空间管理，新建一个空间。</p><p>填写好必填内容，即可创建成功。<br><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-1.png?e=1587474390&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:Z9rtH9mGvIPbtGmIKeoRBxUyjhM=&amp;attname=" width="100%"></p><h4 id="3-上传图片"><a href="#3-上传图片" class="headerlink" title="3.上传图片"></a>3.上传图片</h4><hr><p>空间管理-&gt;文件管理-&gt;上传文件<br>选择文件后上传-&gt;上传成功的会在文件列表出现。</p><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-2.png?e=1587474680&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:MuQc24hMqSZhuE2VjyyiZm9V3J4=&amp;attname=" width="100%"><h4 id="4-获取URL"><a href="#4-获取URL" class="headerlink" title="4.获取URL"></a>4.获取URL</h4><hr><p>文件列表-&gt;操作-&gt;更多-&gt;下载<br>即可复制URL<br><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-3.png?e=1587474680&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:9m7IFWIg3fI_6px13qut9i4EnZQ=&amp;attname=" width="100%"></p><center>-- END --</center>]]></content>
-      
-      
-      <categories>
-          
-          <category> Git </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>文字时钟</title>
       <link href="2021/04/04/JS-%E6%8A%96%E9%9F%B3%E5%BE%88%E7%81%AB%E7%9A%84%E6%96%87%E5%AD%97%E6%97%B6%E9%92%9F/"/>
       <url>2021/04/04/JS-%E6%8A%96%E9%9F%B3%E5%BE%88%E7%81%AB%E7%9A%84%E6%96%87%E5%AD%97%E6%97%B6%E9%92%9F/</url>
@@ -198,6 +173,31 @@
         <tags>
             
             <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用七牛云存储文件</title>
+      <link href="2021/04/04/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6/"/>
+      <url>2021/04/04/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%AD%98%E5%82%A8%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to [Hexo]</p><p><b>需求：</b>在本地写作时，把图片直接传到图片服务器，复制图片URL到本地的markdown文档——发布时只需要将文本内容传到博客即可。访问博客时，博客服务器也只需要加载文本内容，图片内容由图片服务器负责加载。</p><p>之前使用Github进行存储，使用过程发现Github经常不能访问，所以使用七牛云进行存储。</p><h4 id="1-注册七牛云账号"><a href="#1-注册七牛云账号" class="headerlink" title="1.注册七牛云账号"></a>1.注册七牛云账号</h4><hr><p><a target="_blank" href="https://www.qiniu.com/">七牛云</a><br>实名认证即可获得<code>10GB</code>存储空间，对于博客已经很够用。</p><h4 id="2-创建空间"><a href="#2-创建空间" class="headerlink" title="2. 创建空间"></a>2. 创建空间</h4><hr><p>登录，到主页后点击对象存储-空间管理，新建一个空间。</p><p>填写好必填内容，即可创建成功。<br><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-1.png?e=1587474390&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:Z9rtH9mGvIPbtGmIKeoRBxUyjhM=&amp;attname=" width="100%"></p><h4 id="3-上传图片"><a href="#3-上传图片" class="headerlink" title="3.上传图片"></a>3.上传图片</h4><hr><p>空间管理-&gt;文件管理-&gt;上传文件<br>选择文件后上传-&gt;上传成功的会在文件列表出现。</p><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-2.png?e=1587474680&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:MuQc24hMqSZhuE2VjyyiZm9V3J4=&amp;attname=" width="100%"><h4 id="4-获取URL"><a href="#4-获取URL" class="headerlink" title="4.获取URL"></a>4.获取URL</h4><hr><p>文件列表-&gt;操作-&gt;更多-&gt;下载<br>即可复制URL<br><img src="http://q8s2pu3ll.bkt.clouddn.com/qiniu-3.png?e=1587474680&amp;token=voGbpLBJSZOJRRtvMG9WA4cNlqdXthz-bNgDcMxe:9m7IFWIg3fI_6px13qut9i4EnZQ=&amp;attname=" width="100%"></p><center>-- END --</center>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
             
         </tags>
       
